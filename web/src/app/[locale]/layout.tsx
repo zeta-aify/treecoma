@@ -3,6 +3,7 @@ import { Playfair_Display, Inter, Noto_Sans_Thai } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
@@ -97,6 +98,7 @@ export default async function LocaleLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
           <ChatWidget />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
