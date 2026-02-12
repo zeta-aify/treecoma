@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Treecoma x Ban Pastarini — building the complete digital presence for an Italian-Thai family business selling premium organic cannabis (Treecoma) and artisan pizza (Ban Pastarini) in Thailand. The project is currently in **planning phase** with no code implemented yet.
+Treecoma x Ban Passarelli — building the complete digital presence for an Italian-Thai family business selling premium organic cannabis (Treecoma) and artisan pizza (Ban Passarelli) in Thailand. The project is currently in **planning phase** with no code implemented yet.
 
 ## Repository Structure
 

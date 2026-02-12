@@ -1,4 +1,4 @@
-# Treecoma × Ban Pastarini 🌱🍕
+# Treecoma × Ban Passarelli 🌱🍕
 
 Premium organic cannabis & artisan pizza — ett italienskt-thailändskt familjeföretag.
 

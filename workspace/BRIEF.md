@@ -1,4 +1,4 @@
-# Treecoma × Ban Pastarini — Project Brief
+# Treecoma × Ban Passarelli — Project Brief
 
 *Created: 2026-02-11*
 *Status: Planning*
@@ -11,7 +11,7 @@ Build a complete digital presence for an Italian-Thai family business that combi
 
 ### Brand Names
 - **Treecoma** — the cannabis brand
-- **Ban Pastarini** — (verify exact name from image)
+- **Ban Passarelli** — (verify exact name from image)
 
 ### What Makes It Special
 - 🌱 **100% organic** — entire process from seed to sale
