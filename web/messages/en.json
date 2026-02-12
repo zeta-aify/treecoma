@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Ban Passarelli — Italian-Thai Family Restaurant & Treecoma Cannabis",
+    "description": "Authentic artisan pizza, homemade Italian food, and premium organic cannabis in Thailand. A family story of love, food, and nature."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Our Story",
+    "menu": "Menu",
+    "cannabis": "Cannabis",
+    "contact": "Contact",
+    "cart": "Cart",
+    "admin": "Admin"
+  },
+  "home": {
+    "heroTitle": "Where Italy Meets Thailand",
+    "heroSubtitle": "Artisan pizza, homemade pasta, and premium organic cannabis — made with love by our family.",
+    "heroCta": "See Our Menu",
+    "storyTitle": "Our Family Story",
+    "storyText": "Born from an Italian-Thai love story, Ban Passarelli brings authentic Italian flavors to the heart of Thailand. Every pizza is hand-stretched, every sauce is homemade, and every plant is grown with care.",
+    "featuredTitle": "From Our Kitchen",
+    "featuredSubtitle": "Handmade with love, served with a smile",
+    "locationTitle": "Visit Us",
+    "locationCta": "Get Directions"
+  },
+  "about": {
+    "title": "Our Story",
+    "intro": "We're the Passarelli family — Italian roots, Thai heart, and a passion for good food and natural living.",
+    "familyTitle": "A Family Affair",
+    "familyText": "What started as a dream became Ban Passarelli: a place where Italian tradition meets Thai warmth. Our terrace restaurant sits surrounded by greenery, with a garden where we grow our herbs and cannabis plants organically.",
+    "foodTitle": "Real Italian Food",
+    "foodText": "Our recipes come from generations of Italian home cooking. We make our dough fresh every day, our sauces from scratch, and our pasta by hand. No shortcuts, no compromises.",
+    "cannabisTitle": "Organic Cannabis",
+    "cannabisText": "Treecoma is our cannabis brand, grown right here in our garden. We believe in organic, sustainable cultivation — no chemicals, just nature and care."
+  },
+  "contact": {
+    "title": "Visit Us",
+    "hoursTitle": "Opening Hours",
+    "hours": "Wednesday – Monday, 11:00 – 22:00",
+    "closed": "Closed on Tuesdays",
+    "addressTitle": "Address",
+    "directionsBtn": "Get Directions",
+    "chatTitle": "Chat With Us",
+    "chatSubtitle": "Questions about our food, cannabis, or anything else? We'd love to hear from you.",
+    "line": "Chat on LINE",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "menu": {
+    "title": "Our Menu",
+    "subtitle": "Authentic Italian food, made fresh daily",
+    "addToCart": "Add to Cart",
+    "categories": {
+      "starters": "Starters",
+      "pasta": "Pasta",
+      "main": "Main Dishes",
+      "sides": "Side Dishes",
+      "classicPizza": "Classic Pizza",
+      "specialPizza": "Special Pizza",
+      "premiumPizza": "Premium Pizza",
+      "calzoni": "Calzoni",
+      "panini": "Focaccia Panini",
+      "dessert": "Dessert",
+      "drinks": "Drinks",
+      "beers": "Beers",
+      "coffee": "Coffee"
+    }
+  },
+  "cannabis": {
+    "title": "Treecoma Cannabis",
+    "subtitle": "Premium organic cannabis, grown in our garden",
+    "disclaimer": "Cannabis in Thailand is restricted to medical use only. Products shown are for informational purposes. Please visit our location to learn more.",
+    "inquiryTitle": "Interested? Get in Touch",
+    "inquirySubtitle": "Fill out the form below and we'll get back to you.",
+    "nameLabel": "Your Name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone (optional)",
+    "messageLabel": "What are you interested in?",
+    "submitBtn": "Send Inquiry",
+    "successMsg": "Thank you! We'll be in touch soon."
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove",
+    "quantity": "Qty"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "customerInfo": "Your Information",
+    "nameLabel": "Full Name",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email (optional)",
+    "orderType": "Order Type",
+    "pickup": "Pickup",
+    "delivery": "Delivery",
+    "addressLabel": "Delivery Address",
+    "notesLabel": "Special Requests",
+    "paymentTitle": "Payment",
+    "paymentInstructions": "Scan the PromptPay QR code below to complete your payment. After paying, your order will be confirmed.",
+    "placeOrder": "Place Order",
+    "orderTotal": "Total"
+  },
+  "orderConfirmation": {
+    "title": "Order Confirmed!",
+    "thankYou": "Thank you for your order.",
+    "orderNumber": "Order Number",
+    "statusMsg": "We're preparing your order. You'll receive updates via the contact info you provided.",
+    "backHome": "Back to Home"
+  },
+  "chat": {
+    "buttonLabel": "Chat with us",
+    "line": "LINE",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "tagline": "Italian heart, Thai soul",
+    "followUs": "Follow Us",
+    "copyright": "© {year} Ban Passarelli & Treecoma. All rights reserved."
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submitBtn": "Sign In",
+      "error": "Invalid email or password"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "todayOrders": "Today's Orders",
+      "newInquiries": "New Inquiries",
+      "totalRevenue": "Today's Revenue",
+      "noOrders": "No orders today",
+      "noInquiries": "No new inquiries"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "products": "Products",
+      "inquiries": "Inquiries",
+      "logout": "Logout"
+    },
+    "orders": {
+      "title": "Orders",
+      "orderNumber": "Order #",
+      "customer": "Customer",
+      "total": "Total",
+      "status": "Status",
+      "type": "Type",
+      "date": "Date",
+      "updateStatus": "Update Status",
+      "noOrders": "No orders found",
+      "statuses": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "preparing": "Preparing",
+        "ready": "Ready",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      }
+    },
+    "products": {
+      "title": "Products",
+      "addNew": "Add Product",
+      "editProduct": "Edit Product",
+      "nameEn": "Name (English)",
+      "nameTh": "Name (Thai)",
+      "category": "Category",
+      "price": "Price (THB)",
+      "available": "Available",
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "inquiries": {
+      "title": "Cannabis Inquiries",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "status": "Status",
+      "date": "Date",
+      "markContacted": "Mark Contacted",
+      "markClosed": "Close"
+    }
+  }
+}
