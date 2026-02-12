@@ -9,6 +9,7 @@
     "menu": "เมนู",
     "cannabis": "กัญชา",
     "contact": "ติดต่อ",
+    "social": "โซเชียล",
     "cart": "ตะกร้า",
     "admin": "แอดมิน"
   },
@@ -186,5 +187,21 @@
       "markContacted": "ติดต่อแล้ว",
       "markClosed": "ปิด"
     }
+  },
+  "social": {
+    "title": "ติดตามเรา",
+    "subtitle": "ติดตามเราได้ — ดูว่าเรากำลังทำอะไรอยู่ที่บ้านพาสซาเรลลี",
+    "instagramTitle": "Instagram",
+    "instagramFollow": "ติดตาม @treecoma_ltd",
+    "instagramDesc": "เบื้องหลัง เมนูพิเศษประจำวัน อัปเดตจากสวน และชีวิตครอบครัว",
+    "tiktokTitle": "TikTok",
+    "tiktokDesc": "วิดีโอสั้นจากครัว สวน และระเบียง การทำพิซซ่า การปลูกกัญชา และช่วงเวลาครอบครัวไทย-อิตาเลียน",
+    "xTitle": "X (Twitter)",
+    "xDesc": "อัปเดต ความคิด และบทสนทนาเกี่ยวกับอาหาร กัญชา และชีวิตในประเทศไทย",
+    "comingSoon": "เร็วๆ นี้",
+    "comingSoonDesc": "เรากำลังเตรียมช่องทางนี้ — ติดตามเราบน Instagram ก่อนนะ!",
+    "latestPosts": "โพสต์ล่าสุด",
+    "viewOnInstagram": "ดูบน Instagram",
+    "followOnInstagram": "ติดตามบน Instagram"
   }
 }

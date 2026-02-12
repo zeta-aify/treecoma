@@ -16,6 +16,7 @@ export default function Header() {
     { href: "/menu", label: t("menu") },
     { href: "/cannabis", label: t("cannabis") },
     { href: "/about", label: t("about") },
+    { href: "/social", label: t("social") },
     { href: "/contact", label: t("contact") },
   ];
 

@@ -9,6 +9,7 @@
     "menu": "Menu",
     "cannabis": "Cannabis",
     "contact": "Contact",
+    "social": "Social",
     "cart": "Cart",
     "admin": "Admin"
   },
@@ -186,5 +187,21 @@
       "markContacted": "Mark Contacted",
       "markClosed": "Close"
     }
+  },
+  "social": {
+    "title": "Follow Us",
+    "subtitle": "Stay connected — see what's cooking, growing, and happening at Ban Passarelli",
+    "instagramTitle": "Instagram",
+    "instagramFollow": "Follow @treecoma_ltd",
+    "instagramDesc": "Behind the scenes, daily specials, garden updates, and the family life.",
+    "tiktokTitle": "TikTok",
+    "tiktokDesc": "Short videos from the kitchen, the garden, and the terrace. Pizza making, cannabis growing, and Thai-Italian family moments.",
+    "xTitle": "X (Twitter)",
+    "xDesc": "Updates, thoughts, and conversations about food, cannabis, and life in Thailand.",
+    "comingSoon": "Coming Soon",
+    "comingSoonDesc": "We're setting up this channel — follow us on Instagram in the meantime!",
+    "latestPosts": "Latest Posts",
+    "viewOnInstagram": "View on Instagram",
+    "followOnInstagram": "Follow on Instagram"
   }
 }
