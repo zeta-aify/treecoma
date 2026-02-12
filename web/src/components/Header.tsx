@@ -142,7 +142,7 @@ function LanguageSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
 
-  function switchLocale(locale: "th" | "en") {
+  function switchLocale(locale: "th" | "en" | "it") {
     router.replace(pathname, { locale });
   }
 
@@ -160,6 +160,13 @@ function LanguageSwitcher() {
         className="px-1.5 py-0.5 rounded hover:bg-cream-dark transition-colors"
       >
         EN
+      </button>
+      <span className="text-charcoal-light">/</span>
+      <button
+        onClick={() => switchLocale("it")}
+        className="px-1.5 py-0.5 rounded hover:bg-cream-dark transition-colors"
+      >
+        IT
       </button>
     </div>
   );

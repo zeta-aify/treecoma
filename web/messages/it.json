@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "title": "Ban Passarelli — Ristorante Italiano-Thai & Treecoma Cannabis",
+    "description": "Pizza artigianale, cucina italiana fatta in casa e cannabis biologica premium in Thailandia. Una storia di famiglia, amore, cibo e natura."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "La Nostra Storia",
+    "menu": "Menu",
+    "cannabis": "Cannabis",
+    "contact": "Contatti",
+    "social": "Social",
+    "cart": "Carrello",
+    "admin": "Admin"
+  },
+  "home": {
+    "heroTitle": "Dove l'Italia Incontra la Thailandia",
+    "heroSubtitle": "Pizza artigianale, pasta fatta in casa e cannabis biologica premium — fatta con amore dalla nostra famiglia.",
+    "heroCta": "Vedi il Nostro Menu",
+    "storyTitle": "La Nostra Storia",
+    "storyText": "Nata da una storia d'amore italo-thailandese, Ban Passarelli porta i sapori autentici italiani nel cuore della Thailandia. Ogni pizza è stesa a mano, ogni salsa è fatta in casa e ogni pianta è coltivata con cura.",
+    "featuredTitle": "Dalla Nostra Cucina",
+    "featuredSubtitle": "Fatto a mano con amore, servito con un sorriso",
+    "locationTitle": "Vieni a Trovarci",
+    "locationCta": "Indicazioni Stradali"
+  },
+  "about": {
+    "title": "La Nostra Storia",
+    "intro": "Siamo la famiglia Passarelli — radici italiane, cuore thailandese e una passione per il buon cibo e la vita naturale.",
+    "familyTitle": "Una Questione di Famiglia",
+    "familyText": "Quello che è iniziato come un sogno è diventato Ban Passarelli: un luogo dove la tradizione italiana incontra il calore thailandese. Il nostro ristorante con terrazza è circondato dal verde, con un giardino dove coltiviamo le nostre erbe e piante di cannabis in modo biologico.",
+    "foodTitle": "Vera Cucina Italiana",
+    "foodText": "Le nostre ricette vengono da generazioni di cucina casalinga italiana. Prepariamo l'impasto fresco ogni giorno, le salse da zero e la pasta a mano. Nessuna scorciatoia, nessun compromesso.",
+    "cannabisTitle": "Cannabis Biologica",
+    "cannabisText": "Treecoma è il nostro marchio di cannabis, coltivata proprio qui nel nostro giardino. Crediamo nella coltivazione biologica e sostenibile — niente prodotti chimici, solo natura e cura."
+  },
+  "contact": {
+    "title": "Vieni a Trovarci",
+    "hoursTitle": "Orari di Apertura",
+    "hours": "Mercoledì – Lunedì, 11:00 – 22:00",
+    "closed": "Chiuso il Martedì",
+    "addressTitle": "Indirizzo",
+    "directionsBtn": "Indicazioni Stradali",
+    "chatTitle": "Scrivici",
+    "chatSubtitle": "Domande sul cibo, la cannabis o qualsiasi altra cosa? Ci farebbe piacere sentirti.",
+    "line": "Chatta su LINE",
+    "whatsapp": "Chatta su WhatsApp"
+  },
+  "menu": {
+    "title": "Il Nostro Menu",
+    "subtitle": "Cucina italiana autentica, preparata fresca ogni giorno",
+    "addToCart": "Aggiungi",
+    "categories": {
+      "starters": "Antipasti",
+      "pasta": "Pasta",
+      "main": "Secondi Piatti",
+      "sides": "Contorni",
+      "classicPizza": "Pizza Classica",
+      "specialPizza": "Pizza Speciale",
+      "premiumPizza": "Pizza Premium",
+      "calzoni": "Calzoni",
+      "panini": "Focaccia Panini",
+      "dessert": "Dolci",
+      "drinks": "Bevande",
+      "beers": "Birre",
+      "coffee": "Caffè"
+    }
+  },
+  "cannabis": {
+    "title": "Treecoma Cannabis",
+    "subtitle": "Cannabis biologica premium, coltivata nel nostro giardino",
+    "disclaimer": "La cannabis in Thailandia è limitata esclusivamente all'uso medico. I prodotti mostrati sono a scopo informativo. Vi invitiamo a visitare la nostra sede per saperne di più.",
+    "inquiryTitle": "Interessato? Contattaci",
+    "inquirySubtitle": "Compila il modulo qui sotto e ti risponderemo al più presto.",
+    "nameLabel": "Il Tuo Nome",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefono (facoltativo)",
+    "messageLabel": "A cosa sei interessato?",
+    "submitBtn": "Invia Richiesta",
+    "successMsg": "Grazie! Ti contatteremo presto."
+  },
+  "cart": {
+    "title": "Il Tuo Carrello",
+    "empty": "Il carrello è vuoto",
+    "continueShopping": "Continua gli Acquisti",
+    "subtotal": "Subtotale",
+    "checkout": "Vai al Pagamento",
+    "remove": "Rimuovi",
+    "quantity": "Qtà"
+  },
+  "checkout": {
+    "title": "Pagamento",
+    "customerInfo": "Le Tue Informazioni",
+    "nameLabel": "Nome Completo",
+    "phoneLabel": "Numero di Telefono",
+    "emailLabel": "Email (facoltativo)",
+    "orderType": "Tipo di Ordine",
+    "pickup": "Ritiro",
+    "delivery": "Consegna",
+    "addressLabel": "Indirizzo di Consegna",
+    "notesLabel": "Richieste Speciali",
+    "paymentTitle": "Pagamento",
+    "paymentInstructions": "Scansiona il codice QR PromptPay qui sotto per completare il pagamento. Dopo il pagamento, il tuo ordine sarà confermato.",
+    "placeOrder": "Ordina",
+    "orderTotal": "Totale"
+  },
+  "orderConfirmation": {
+    "title": "Ordine Confermato!",
+    "thankYou": "Grazie per il tuo ordine.",
+    "orderNumber": "Numero Ordine",
+    "statusMsg": "Stiamo preparando il tuo ordine. Riceverai aggiornamenti tramite i contatti che hai fornito.",
+    "backHome": "Torna alla Home"
+  },
+  "chat": {
+    "buttonLabel": "Scrivici",
+    "line": "LINE",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "tagline": "Cuore italiano, anima thailandese",
+    "followUs": "Seguici",
+    "copyright": "© {year} Ban Passarelli & Treecoma. Tutti i diritti riservati."
+  },
+  "admin": {
+    "login": {
+      "title": "Accesso Admin",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submitBtn": "Accedi",
+      "error": "Email o password non validi"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "todayOrders": "Ordini di Oggi",
+      "newInquiries": "Nuove Richieste",
+      "totalRevenue": "Incasso di Oggi",
+      "noOrders": "Nessun ordine oggi",
+      "noInquiries": "Nessuna nuova richiesta"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Ordini",
+      "products": "Prodotti",
+      "inquiries": "Richieste",
+      "logout": "Esci"
+    },
+    "orders": {
+      "title": "Ordini",
+      "orderNumber": "Ordine #",
+      "customer": "Cliente",
+      "total": "Totale",
+      "status": "Stato",
+      "type": "Tipo",
+      "date": "Data",
+      "updateStatus": "Aggiorna Stato",
+      "noOrders": "Nessun ordine trovato",
+      "statuses": {
+        "pending": "In Attesa",
+        "confirmed": "Confermato",
+        "preparing": "In Preparazione",
+        "ready": "Pronto",
+        "completed": "Completato",
+        "cancelled": "Annullato"
+      }
+    },
+    "products": {
+      "title": "Prodotti",
+      "addNew": "Aggiungi Prodotto",
+      "editProduct": "Modifica Prodotto",
+      "nameEn": "Nome (Inglese)",
+      "nameTh": "Nome (Thai)",
+      "category": "Categoria",
+      "price": "Prezzo (THB)",
+      "available": "Disponibile",
+      "save": "Salva",
+      "cancel": "Annulla",
+      "delete": "Elimina"
+    },
+    "inquiries": {
+      "title": "Richieste Cannabis",
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Telefono",
+      "message": "Messaggio",
+      "status": "Stato",
+      "date": "Data",
+      "markContacted": "Segna come Contattato",
+      "markClosed": "Chiudi"
+    }
+  },
+  "social": {
+    "title": "Seguici",
+    "subtitle": "Resta connesso — scopri cosa cuciniamo, coltiviamo e cosa succede a Ban Passarelli",
+    "instagramTitle": "Instagram",
+    "instagramFollow": "Segui @treecoma_ltd",
+    "instagramDesc": "Dietro le quinte, specialità del giorno, aggiornamenti dal giardino e la vita in famiglia.",
+    "tiktokTitle": "TikTok",
+    "tiktokDesc": "Video brevi dalla cucina, dal giardino e dalla terrazza. La preparazione della pizza, la coltivazione della cannabis e i momenti della famiglia italo-thailandese.",
+    "xTitle": "X (Twitter)",
+    "xDesc": "Aggiornamenti, pensieri e conversazioni su cibo, cannabis e vita in Thailandia.",
+    "comingSoon": "Prossimamente",
+    "comingSoonDesc": "Stiamo preparando questo canale — nel frattempo seguici su Instagram!",
+    "latestPosts": "Ultimi Post",
+    "viewOnInstagram": "Vedi su Instagram",
+    "followOnInstagram": "Segui su Instagram"
+  }
+}
