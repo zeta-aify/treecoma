@@ -69,7 +69,7 @@ export default function CheckoutPage() {
       if (res.ok) {
         const { order_number } = await res.json();
         clearCart();
-        router.push(`/order-confirmation?order=${order_number}`);
+        router.push(`/track?order=${order_number}`);
       } else {
         setError("Something went wrong. Please try again or contact us via LINE/WhatsApp.");
       }
