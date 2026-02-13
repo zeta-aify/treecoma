@@ -5,6 +5,7 @@ import { useCartStore } from "@/stores/cart";
 import { useRouter } from "@/i18n/navigation";
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
+import PromptPayQR from "@/components/PromptPayQR";
 
 export default function CheckoutPage() {
   const t = useTranslations("checkout");
@@ -241,14 +242,9 @@ export default function CheckoutPage() {
               <p className="text-sm text-charcoal-light mb-4">
                 {t("paymentInstructions")}
               </p>
-              {/* PromptPay QR placeholder */}
-              <div className="inline-block bg-white p-4 rounded-xl mb-3">
-                <div className="w-48 h-48 bg-cream-dark rounded-lg flex items-center justify-center text-charcoal-light text-sm">
-                  PromptPay QR Code
-                </div>
-              </div>
+              <PromptPayQR amount={totalPrice()} />
               <p className="text-xs text-charcoal-light">
-                PromptPay ID: XXX-XXX-XXXX
+                PromptPay: 095-057-9660
               </p>
             </div>
           </section>
