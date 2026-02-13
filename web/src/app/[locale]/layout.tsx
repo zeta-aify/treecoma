@@ -42,7 +42,7 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(
-      process.env.NEXT_PUBLIC_SITE_URL || "https://banpassarelli.com",
+      process.env.NEXT_PUBLIC_SITE_URL || "https://treecoma-banpassarelli.com",
     ),
     title: {
       default: meta.title,
