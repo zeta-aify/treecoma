@@ -13,7 +13,37 @@ function generateOrderNumber(): string {
   return `BP-${dateStr}-${random}`;
 }
 
-async function sendOrderNotification(
+function buildOrderText(
+  orderNumber: string,
+  customer: { name: string; phone: string; email?: string },
+  items: { name_snapshot: string; price: number; quantity: number; variant?: string | null }[],
+  total: number,
+  orderType: string,
+  deliveryAddress?: string,
+  notes?: string,
+) {
+  const itemLines = items
+    .map(
+      (item) =>
+        `  ${item.name_snapshot}${item.variant ? ` (${item.variant})` : ""} x${item.quantity} — ${item.price * item.quantity}฿`,
+    )
+    .join("\n");
+
+  return `🔔 New Order ${orderNumber}
+
+Type: ${orderType === "pickup" ? "🏠 Pickup" : "🛵 Delivery"}
+${deliveryAddress ? `Address: ${deliveryAddress}\n` : ""}
+Customer: ${customer.name}
+Phone: ${customer.phone}
+${customer.email ? `Email: ${customer.email}\n` : ""}
+Items:
+${itemLines}
+
+Total: ${total}฿
+${notes ? `\nNotes: ${notes}` : ""}`;
+}
+
+async function sendEmailNotification(
   orderNumber: string,
   customer: { name: string; phone: string; email?: string },
   items: { name_snapshot: string; price: number; quantity: number; variant?: string | null }[],
@@ -24,32 +54,41 @@ async function sendOrderNotification(
 ) {
   if (!resend) return;
 
-  const itemLines = items
-    .map(
-      (item) =>
-        `  ${item.name_snapshot}${item.variant ? ` (${item.variant})` : ""} x${item.quantity} — ${item.price * item.quantity}฿`,
-    )
-    .join("\n");
+  const text = buildOrderText(orderNumber, customer, items, total, orderType, deliveryAddress, notes);
 
   await resend.emails.send({
     from: "Ban Passarelli <onboarding@resend.dev>",
     to: "treecoma.ltd@gmail.com",
     subject: `New Order ${orderNumber} — ${total}฿`,
-    text: `New order received!
+    text: text + "\n\nView in admin: https://treecoma-banpassarelli.com/en/admin/orders",
+  });
+}
 
-Order: ${orderNumber}
-Type: ${orderType === "pickup" ? "Pickup" : "Delivery"}
-${deliveryAddress ? `Address: ${deliveryAddress}\n` : ""}
-Customer: ${customer.name}
-Phone: ${customer.phone}
-${customer.email ? `Email: ${customer.email}\n` : ""}
-Items:
-${itemLines}
+async function sendLineNotification(
+  orderNumber: string,
+  customer: { name: string; phone: string; email?: string },
+  items: { name_snapshot: string; price: number; quantity: number; variant?: string | null }[],
+  total: number,
+  orderType: string,
+  deliveryAddress?: string,
+  notes?: string,
+) {
+  const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
+  const userId = process.env.LINE_NOTIFY_USER_ID;
+  if (!token || !userId) return;
 
-Total: ${total}฿
-${notes ? `\nNotes: ${notes}` : ""}
+  const text = buildOrderText(orderNumber, customer, items, total, orderType, deliveryAddress, notes);
 
-View in admin: https://treecoma-banpassarelli.com/en/admin/orders`,
+  await fetch("https://api.line.me/v2/bot/message/push", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      to: userId,
+      messages: [{ type: "text", text }],
+    }),
   });
 }
 
@@ -128,16 +167,10 @@ export async function POST(request: NextRequest) {
 
     if (itemsError) throw itemsError;
 
-    // Send email notification (non-blocking)
-    sendOrderNotification(
-      orderNumber,
-      customer,
-      items,
-      total,
-      order.order_type,
-      order.delivery_address,
-      order.notes,
-    ).catch(console.error);
+    // Send notifications (non-blocking)
+    const notifyArgs = [orderNumber, customer, items, total, order.order_type, order.delivery_address, order.notes] as const;
+    sendEmailNotification(...notifyArgs).catch(console.error);
+    sendLineNotification(...notifyArgs).catch(console.error);
 
     return NextResponse.json({ order_number: orderNumber });
   } catch (err) {
