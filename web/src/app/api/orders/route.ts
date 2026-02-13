@@ -1,11 +1,56 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { Resend } from "resend";
+
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 function generateOrderNumber(): string {
   const date = new Date();
   const dateStr = date.toISOString().slice(0, 10).replace(/-/g, "");
   const random = Math.random().toString(36).substring(2, 6).toUpperCase();
   return `BP-${dateStr}-${random}`;
+}
+
+async function sendOrderNotification(
+  orderNumber: string,
+  customer: { name: string; phone: string; email?: string },
+  items: { name_snapshot: string; price: number; quantity: number; variant?: string | null }[],
+  total: number,
+  orderType: string,
+  deliveryAddress?: string,
+  notes?: string,
+) {
+  if (!resend) return;
+
+  const itemLines = items
+    .map(
+      (item) =>
+        `  ${item.name_snapshot}${item.variant ? ` (${item.variant})` : ""} x${item.quantity} — ${item.price * item.quantity}฿`,
+    )
+    .join("\n");
+
+  await resend.emails.send({
+    from: "Ban Passarelli <onboarding@resend.dev>",
+    to: "treecoma.ltd@gmail.com",
+    subject: `New Order ${orderNumber} — ${total}฿`,
+    text: `New order received!
+
+Order: ${orderNumber}
+Type: ${orderType === "pickup" ? "Pickup" : "Delivery"}
+${deliveryAddress ? `Address: ${deliveryAddress}\n` : ""}
+Customer: ${customer.name}
+Phone: ${customer.phone}
+${customer.email ? `Email: ${customer.email}\n` : ""}
+Items:
+${itemLines}
+
+Total: ${total}฿
+${notes ? `\nNotes: ${notes}` : ""}
+
+View in admin: https://treecoma-banpassarelli.com/en/admin/orders`,
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -82,6 +127,17 @@ export async function POST(request: NextRequest) {
       .insert(orderItems);
 
     if (itemsError) throw itemsError;
+
+    // Send email notification (non-blocking)
+    sendOrderNotification(
+      orderNumber,
+      customer,
+      items,
+      total,
+      order.order_type,
+      order.delivery_address,
+      order.notes,
+    ).catch(console.error);
 
     return NextResponse.json({ order_number: orderNumber });
   } catch (err) {
