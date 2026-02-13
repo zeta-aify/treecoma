@@ -15,6 +15,7 @@ export default function CheckoutPage() {
   const router = useRouter();
   const [orderType, setOrderType] = useState<"pickup" | "delivery">("pickup");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   if (items.length === 0) {
     return (
@@ -69,9 +70,11 @@ export default function CheckoutPage() {
         const { order_number } = await res.json();
         clearCart();
         router.push(`/order-confirmation?order=${order_number}`);
+      } else {
+        setError("Something went wrong. Please try again or contact us via LINE/WhatsApp.");
       }
     } catch {
-      // Handle error
+      setError("Connection error. Please check your internet and try again.");
     } finally {
       setLoading(false);
     }
@@ -259,6 +262,12 @@ export default function CheckoutPage() {
               </p>
             </div>
           </section>
+
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+              {error}
+            </div>
+          )}
 
           <button
             type="submit"

@@ -153,7 +153,7 @@ export async function POST(request: NextRequest) {
         variant: string | null;
       }) => ({
         order_id: orderData.id,
-        product_id: item.product_id,
+        product_id: item.product_id.startsWith("static-") ? null : item.product_id,
         name_snapshot: item.name_snapshot,
         price: item.price,
         quantity: item.quantity,
