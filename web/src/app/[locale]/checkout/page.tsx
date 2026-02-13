@@ -5,7 +5,16 @@ import { useCartStore } from "@/stores/cart";
 import { useRouter } from "@/i18n/navigation";
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
-import PromptPayQR from "@/components/PromptPayQR";
+import dynamic from "next/dynamic";
+
+const PromptPayQR = dynamic(() => import("@/components/PromptPayQR"), {
+  ssr: false,
+  loading: () => (
+    <div className="inline-block bg-white p-4 rounded-xl mb-3">
+      <div className="w-[280px] h-[280px] bg-cream-dark rounded-lg animate-pulse" />
+    </div>
+  ),
+});
 
 export default function CheckoutPage() {
   const t = useTranslations("checkout");

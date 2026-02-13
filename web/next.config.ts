@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp"],
   },
+  serverExternalPackages: ["promptpay-qr"],
 };
 
 export default withNextIntl(nextConfig);
