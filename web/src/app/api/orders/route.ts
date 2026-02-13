@@ -169,8 +169,8 @@ export async function POST(request: NextRequest) {
 
     // Send notifications (non-blocking)
     const notifyArgs = [orderNumber, customer, items, total, order.order_type, order.delivery_address, order.notes] as const;
-    sendEmailNotification(...notifyArgs).catch(console.error);
-    sendLineNotification(...notifyArgs).catch(console.error);
+    sendEmailNotification(...notifyArgs).catch((err) => console.error("Email error:", err));
+    sendLineNotification(...notifyArgs).catch((err) => console.error("LINE error:", err));
 
     return NextResponse.json({ order_number: orderNumber });
   } catch (err: unknown) {
