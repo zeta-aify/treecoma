@@ -175,10 +175,16 @@ export async function POST(request: NextRequest) {
 
     if (itemsError) throw itemsError;
 
-    // Send notifications (non-blocking)
+    // Send notifications (wait for them before returning so serverless doesn't kill the process)
     const notifyArgs = [orderNumber, customer, items, total, order.order_type, order.delivery_address, order.notes] as const;
-    sendEmailNotification(...notifyArgs).catch((err) => console.error("Email error:", err));
-    sendLineNotification(...notifyArgs).catch((err) => console.error("LINE error:", err));
+    const results = await Promise.allSettled([
+      sendEmailNotification(...notifyArgs),
+      sendLineNotification(...notifyArgs),
+    ]);
+
+    const emailResult = results[0].status === "fulfilled" ? "sent" : `error: ${(results[0] as PromiseRejectedResult).reason}`;
+    const lineResult = results[1].status === "fulfilled" ? "sent" : `error: ${(results[1] as PromiseRejectedResult).reason}`;
+    console.log(`Order ${orderNumber} notifications — email: ${emailResult}, line: ${lineResult}`);
 
     return NextResponse.json({ order_number: orderNumber });
   } catch (err: unknown) {
