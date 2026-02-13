@@ -54,12 +54,22 @@ function OrderConfirmationContent() {
 
         <p className="text-sm text-charcoal-light mb-8">{t("statusMsg")}</p>
 
-        <Link
-          href="/"
-          className="inline-block bg-forest hover:bg-forest-light text-white px-6 py-3 rounded-full font-medium transition-colors"
-        >
-          {t("backHome")}
-        </Link>
+        <div className="flex flex-col gap-3">
+          {orderNumber && (
+            <Link
+              href={`/track?order=${orderNumber}`}
+              className="inline-block bg-forest hover:bg-forest-light text-white px-6 py-3 rounded-full font-medium transition-colors"
+            >
+              Track Your Order
+            </Link>
+          )}
+          <Link
+            href="/"
+            className="inline-block text-forest hover:text-forest-light font-medium transition-colors"
+          >
+            {t("backHome")}
+          </Link>
+        </div>
       </div>
     </div>
   );
