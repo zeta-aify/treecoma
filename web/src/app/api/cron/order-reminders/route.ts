@@ -1,10 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { createClient } from "@supabase/supabase-js";
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
+function getMailTransport() {
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  if (!user || !pass) return null;
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
+}
 
 // Use service role key for cron (no user session)
 function getSupabase() {
@@ -22,7 +28,8 @@ export async function GET(request: NextRequest) {
   }
 
   const supabase = getSupabase();
-  if (!supabase || !resend) {
+  const transport = getMailTransport();
+  if (!supabase || !transport) {
     return NextResponse.json({ error: "Not configured" }, { status: 500 });
   }
 
@@ -47,9 +54,9 @@ export async function GET(request: NextRequest) {
     })
     .join("\n");
 
-  await resend.emails.send({
-    from: "Ban Passarelli <onboarding@resend.dev>",
-    to: "treecoma.ltd@gmail.com",
+  await transport.sendMail({
+    from: `"Ban Passarelli" <${process.env.GMAIL_USER}>`,
+    to: process.env.GMAIL_USER!,
     subject: `Reminder: ${staleOrders.length} order${staleOrders.length > 1 ? "s" : ""} need attention`,
     text: `Hi Angela,
 

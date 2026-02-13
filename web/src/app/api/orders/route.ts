@@ -1,10 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
+function getMailTransport() {
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  if (!user || !pass) return null;
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
+}
 
 function generateOrderNumber(): string {
   const date = new Date();
@@ -52,13 +58,14 @@ async function sendEmailNotification(
   deliveryAddress?: string,
   notes?: string,
 ) {
-  if (!resend) return;
+  const transport = getMailTransport();
+  if (!transport) return;
 
   const text = buildOrderText(orderNumber, customer, items, total, orderType, deliveryAddress, notes);
 
-  await resend.emails.send({
-    from: "Ban Passarelli <onboarding@resend.dev>",
-    to: "treecoma.ltd@gmail.com",
+  await transport.sendMail({
+    from: `"Ban Passarelli" <${process.env.GMAIL_USER}>`,
+    to: process.env.GMAIL_USER!,
     subject: `New Order ${orderNumber} — ${total}฿`,
     text: text + "\n\nView in admin: https://treecoma-banpassarelli.com/en/admin/orders",
   });
