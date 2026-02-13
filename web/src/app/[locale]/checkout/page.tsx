@@ -5,16 +5,7 @@ import { useCartStore } from "@/stores/cart";
 import { useRouter } from "@/i18n/navigation";
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
-import dynamic from "next/dynamic";
-
-const PromptPayQR = dynamic(() => import("@/components/PromptPayQR"), {
-  ssr: false,
-  loading: () => (
-    <div className="inline-block bg-white p-4 rounded-xl mb-3">
-      <div className="w-[280px] h-[280px] bg-cream-dark rounded-lg animate-pulse" />
-    </div>
-  ),
-});
+import Image from "next/image";
 
 export default function CheckoutPage() {
   const t = useTranslations("checkout");
@@ -251,9 +242,20 @@ export default function CheckoutPage() {
               <p className="text-sm text-charcoal-light mb-4">
                 {t("paymentInstructions")}
               </p>
-              <PromptPayQR amount={totalPrice()} />
+              <div className="inline-block bg-white p-4 rounded-xl mb-3">
+                <Image
+                  src="/images/promptpay-qr.jpeg"
+                  alt="PromptPay QR — Treecoma Co., Ltd."
+                  width={280}
+                  height={280}
+                  className="rounded-lg"
+                />
+              </div>
+              <p className="text-sm font-semibold text-forest mb-1">
+                {totalPrice()}฿
+              </p>
               <p className="text-xs text-charcoal-light">
-                PromptPay: 095-057-9660
+                ทรี โคมา (Treecoma Co., Ltd.)
               </p>
             </div>
           </section>
