@@ -28,14 +28,14 @@ function ContactContent() {
             {/* Google Maps embed placeholder */}
             <div className="rounded-2xl overflow-hidden mb-6 bg-cream-dark h-64 flex items-center justify-center">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.5!2d100.5!3d13.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBan%20Passarelli!5e0!3m2!1sen!2sth!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d99.2393851!3d18.776815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d989f5deb44a29%3A0x438e6bdaae08745b!2zQsOibiBQYXNzYXJlbGxp!5e0!3m2!1sen!2sth!4v1"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Ban Passarelli location"
+                title="Bân Passarelli location"
               />
             </div>
 
@@ -45,10 +45,10 @@ function ContactContent() {
                   {t("addressTitle")}
                 </h3>
                 <p className="text-charcoal-light text-sm">
-                  Ban Passarelli, Thailand
+                  Bân Passarelli, Chiang Mai, Thailand
                 </p>
                 <a
-                  href="https://maps.google.com/?q=Ban+Passarelli"
+                  href="https://www.google.com/maps/dir/?api=1&destination=18.776815,99.24196"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-2 text-sm font-medium text-forest hover:text-forest-light transition-colors underline"
