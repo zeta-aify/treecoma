@@ -173,10 +173,11 @@ export async function POST(request: NextRequest) {
     sendLineNotification(...notifyArgs).catch(console.error);
 
     return NextResponse.json({ order_number: orderNumber });
-  } catch (err) {
-    console.error("Order creation error:", err);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : JSON.stringify(err);
+    console.error("Order creation error:", message);
     return NextResponse.json(
-      { error: "Failed to create order" },
+      { error: "Failed to create order", detail: message },
       { status: 500 },
     );
   }
