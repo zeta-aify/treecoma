@@ -144,6 +144,7 @@ export async function POST(request: NextRequest) {
         delivery_address: order.delivery_address,
         notes: order.notes,
         total,
+        payment_status: order.payment_status || "pending",
       })
       .select("id")
       .single();

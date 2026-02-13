@@ -224,6 +224,13 @@ export default function AdminOrdersPage() {
                       <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${STATUS_COLORS[order.status]}`}>
                         {t(`statuses.${order.status}`)}
                       </span>
+                      <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${
+                        order.payment_status === "paid"
+                          ? "bg-green-100 text-green-800 border-green-300"
+                          : "bg-red-100 text-red-700 border-red-300"
+                      }`}>
+                        {order.payment_status === "paid" ? "Paid" : "Not Paid"}
+                      </span>
                     </div>
                     <p className="text-sm text-charcoal-light">
                       {order.order_type === "delivery" ? "Delivery" : "Pickup"}

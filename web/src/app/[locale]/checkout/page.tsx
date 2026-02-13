@@ -16,6 +16,7 @@ export default function CheckoutPage() {
   const [orderType, setOrderType] = useState<"pickup" | "delivery">("pickup");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [hasPaid, setHasPaid] = useState(false);
 
   if (items.length === 0) {
     return (
@@ -55,6 +56,7 @@ export default function CheckoutPage() {
             delivery_address:
               orderType === "delivery" ? data.get("address") : null,
             notes: data.get("notes") || null,
+            payment_status: hasPaid ? "paid" : "pending",
           },
           items: items.map((item) => ({
             product_id: item.id,
@@ -260,6 +262,18 @@ export default function CheckoutPage() {
               <p className="text-xs text-charcoal-light">
                 ทรี โคมา (Treecoma Co., Ltd.)
               </p>
+
+              <label className="flex items-center justify-center gap-3 mt-6 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={hasPaid}
+                  onChange={(e) => setHasPaid(e.target.checked)}
+                  className="w-5 h-5 rounded border-2 border-forest text-forest focus:ring-forest/30 accent-forest"
+                />
+                <span className="text-sm font-medium text-charcoal">
+                  I have paid via PromptPay
+                </span>
+              </label>
             </div>
           </section>
 
@@ -271,10 +285,10 @@ export default function CheckoutPage() {
 
           <button
             type="submit"
-            disabled={loading}
-            className="w-full bg-terracotta hover:bg-terracotta-dark disabled:opacity-50 text-white py-4 rounded-xl font-medium text-lg transition-colors"
+            disabled={loading || !hasPaid}
+            className="w-full bg-terracotta hover:bg-terracotta-dark disabled:opacity-50 disabled:cursor-not-allowed text-white py-4 rounded-xl font-medium text-lg transition-colors"
           >
-            {loading ? "..." : t("placeOrder")}
+            {loading ? "..." : !hasPaid ? "Pay first to place order" : t("placeOrder")}
           </button>
         </form>
       </div>
