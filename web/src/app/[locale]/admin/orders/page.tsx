@@ -15,6 +15,7 @@ interface OrderWithDetails {
   total: number;
   payment_status: string;
   created_at: string;
+  updated_at: string;
   customers: { name: string; phone: string; email: string | null } | null;
   order_items: { name_snapshot: string; price: number; quantity: number; variant: string | null }[];
 }
@@ -88,14 +89,36 @@ export default function AdminOrdersPage() {
   }
 
   const activeStatuses: OrderStatus[] = ["pending", "confirmed", "preparing", "ready"];
+  const oneHourAgo = Date.now() - 60 * 60 * 1000;
+
+  // Active orders: not completed/cancelled
+  const activeOrders = orders.filter((o) => activeStatuses.includes(o.status));
+
+  // Recent history: completed/cancelled within last hour
+  const recentHistory = orders.filter(
+    (o) =>
+      (o.status === "completed" || o.status === "cancelled") &&
+      new Date(o.updated_at || o.created_at).getTime() > oneHourAgo,
+  );
+
+  // Old history: completed/cancelled older than 1 hour (hidden by default)
+  const oldHistory = orders.filter(
+    (o) =>
+      (o.status === "completed" || o.status === "cancelled") &&
+      new Date(o.updated_at || o.created_at).getTime() <= oneHourAgo,
+  );
+
   const filtered =
     filter === "all"
-      ? orders
+      ? [...activeOrders, ...recentHistory]
       : filter === "active"
-        ? orders.filter((o) => activeStatuses.includes(o.status))
-        : orders.filter((o) => o.status === filter);
+        ? activeOrders
+        : filter === "history"
+          ? [...recentHistory, ...oldHistory]
+          : orders.filter((o) => o.status === filter);
 
   const pendingCount = orders.filter((o) => o.status === "pending").length;
+  const [showHistory, setShowHistory] = useState(false);
 
   if (loading) {
     return <div className="text-charcoal-light py-8">Loading...</div>;
@@ -144,6 +167,18 @@ export default function AdminOrdersPage() {
         >
           All ({orders.length})
         </button>
+        {oldHistory.length > 0 && (
+          <button
+            onClick={() => { setFilter("history"); setShowHistory(true); }}
+            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+              filter === "history"
+                ? "bg-forest text-white"
+                : "bg-cream-dark text-charcoal-light hover:bg-forest/10"
+            }`}
+          >
+            History ({oldHistory.length + recentHistory.length})
+          </button>
+        )}
         {(["pending", "confirmed", "preparing", "ready", "completed", "cancelled"] as OrderStatus[]).map((status) => {
           const count = orders.filter((o) => o.status === status).length;
           if (count === 0) return null;
