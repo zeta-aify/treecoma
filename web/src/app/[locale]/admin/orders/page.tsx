@@ -72,6 +72,24 @@ export default function AdminOrdersPage() {
     );
   }
 
+  async function togglePayment(orderId: string, currentStatus: string) {
+    const newStatus = currentStatus === "paid" ? "pending" : "paid";
+    const supabase = createClient();
+    const { error } = await supabase
+      .from("orders")
+      .update({ payment_status: newStatus })
+      .eq("id", orderId);
+
+    if (error) {
+      alert("Failed to update payment status");
+      return;
+    }
+
+    setOrders((prev) =>
+      prev.map((o) => (o.id === orderId ? { ...o, payment_status: newStatus } : o)),
+    );
+  }
+
   function getNextStatus(current: OrderStatus): OrderStatus | null {
     const idx = STATUS_FLOW.indexOf(current);
     if (idx === -1 || idx >= STATUS_FLOW.length - 1) return null;
@@ -224,13 +242,16 @@ export default function AdminOrdersPage() {
                       <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${STATUS_COLORS[order.status]}`}>
                         {t(`statuses.${order.status}`)}
                       </span>
-                      <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${
-                        order.payment_status === "paid"
-                          ? "bg-green-100 text-green-800 border-green-300"
-                          : "bg-red-100 text-red-700 border-red-300"
-                      }`}>
+                      <button
+                        onClick={() => togglePayment(order.id, order.payment_status)}
+                        className={`text-xs px-2 py-0.5 rounded-full border font-medium transition-colors ${
+                          order.payment_status === "paid"
+                            ? "bg-green-100 text-green-800 border-green-300 hover:bg-green-200"
+                            : "bg-red-100 text-red-700 border-red-300 hover:bg-red-200"
+                        }`}
+                      >
                         {order.payment_status === "paid" ? "Paid" : "Not Paid"}
-                      </span>
+                      </button>
                     </div>
                     <p className="text-sm text-charcoal-light">
                       {order.order_type === "delivery" ? "Delivery" : "Pickup"}

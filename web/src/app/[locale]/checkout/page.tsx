@@ -56,7 +56,7 @@ export default function CheckoutPage() {
             delivery_address:
               orderType === "delivery" ? data.get("address") : null,
             notes: data.get("notes") || null,
-            payment_status: hasPaid ? "paid" : "pending",
+            payment_status: "pending",
           },
           items: items.map((item) => ({
             product_id: item.id,
