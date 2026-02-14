@@ -81,19 +81,17 @@ async function sendLineNotification(
   notes?: string,
 ) {
   const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-  const userId = process.env.LINE_NOTIFY_USER_ID;
-  if (!token || !userId) return;
+  if (!token) return;
 
   const text = buildOrderText(orderNumber, customer, items, total, orderType, deliveryAddress, notes);
 
-  await fetch("https://api.line.me/v2/bot/message/push", {
+  await fetch("https://api.line.me/v2/bot/message/broadcast", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
-      to: userId,
       messages: [{ type: "text", text }],
     }),
   });
