@@ -69,6 +69,25 @@ https://manager.line.biz/account/@898awkbw/chat`,
   });
 }
 
+const CANNABIS_MENU = `🌿 Treecoma Cannabis Menu
+
+Indoor:
+• Ethanol (Hybrid) — 120฿/g
+
+Greenhouse (100฿/g):
+• Amnesia Payton (Sativa)
+• Blue Sushi (Indica)
+• Gorilla Glue (Indica)
+• Sky Walker (Sativa)
+
+🍰 Edibles:
+• Magic Cake — 250฿ (vegan chocolate cake with extract)
+
+⚕️ Licensed dispensary — valid Thai medical cannabis license required.
+📍 Visit us in Mae On, Chiang Mai
+
+💬 Want to know more? Just type in this chat and our team will help you.`;
+
 const WELCOME_AND_MENU = `Welcome to Bân Passarelli & Treecoma! 🌿🍕
 
 We're an Italian family restaurant in Mae On, Chiang Mai — serving handmade pizza, fresh pasta, homemade desserts, and Italian coffee.
@@ -80,6 +99,8 @@ We are also a licensed cannabis dispensary (Treecoma).
 
 🍕 See our full menu:
 ${SITE_URL}/en/menu
+
+🌿 Type "cannabis menu" to see our strains & edibles.
 
 💬 Need help or have questions?
 Just type in this chat and our team will assist you directly.
@@ -143,7 +164,23 @@ Angela will confirm your order! 🙏`,
         continue;
       }
 
-      // Any first message / greeting / menu request → send menu
+      // "cannabis menu" → send cannabis product list
+      if (
+        lower === "cannabis menu" ||
+        lower === "cannabis meny" ||
+        lower === "weed menu" ||
+        lower === "strain" ||
+        lower === "strains" ||
+        lower === "เมนูกัญชา"
+      ) {
+        await reply(event.replyToken, [
+          { type: "text", text: CANNABIS_MENU },
+        ]);
+        await notifyAngela(customerName, `${userText} [Cannabis menu sent]`);
+        continue;
+      }
+
+      // Any first message / greeting / menu request → send welcome
       if (
         lower === "hi" ||
         lower === "hello" ||
