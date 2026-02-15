@@ -81,8 +81,9 @@ export async function generateMetadata({
   };
 }
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://treecoma-banpassarelli.com";
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://treecoma-banpassarelli.com"
+).trim();
 
 function LocalBusinessJsonLd() {
   const restaurant = {

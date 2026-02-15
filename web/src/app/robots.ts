@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://treecoma-banpassarelli.com";
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://treecoma-banpassarelli.com"
+).trim();
 
 export default function robots(): MetadataRoute.Robots {
   return {
