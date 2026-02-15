@@ -45,7 +45,12 @@ function ContactContent() {
                   {t("addressTitle")}
                 </h3>
                 <p className="text-charcoal-light text-sm">
-                  Bân Passarelli, Chiang Mai, Thailand
+                  Bân Passarelli, 85 Moo 8, Ban Sa Ha Khon
+                  <br />
+                  Mae On District, Chiang Mai 50130, Thailand
+                </p>
+                <p className="text-charcoal-light text-sm mt-1">
+                  Tel: <a href="tel:+66950579660" className="text-forest hover:text-forest-light transition-colors">095-057-9660</a>
                 </p>
                 <a
                   href="https://www.google.com/maps/dir/?api=1&destination=18.776815,99.24196"

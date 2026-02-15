@@ -69,37 +69,22 @@ https://manager.line.biz/account/@898awkbw/chat`,
   });
 }
 
-const WELCOME_AND_MENU = `Welcome to Treecoma & Ban Passarelli! 🌿🍕
+const WELCOME_AND_MENU = `Welcome to Bân Passarelli & Treecoma! 🌿🍕
 
-🌿 CANNABIS (Treecoma)
+We're an Italian family restaurant in Mae On, Chiang Mai — serving handmade pizza, fresh pasta, homemade desserts, and Italian coffee.
 
-Indoor:
-• Ethanol (Hybrid) — 120฿/g
+We are also a licensed cannabis dispensary (Treecoma).
 
-Greenhouse (100฿/g):
-• Amnesia Payton (Sativa)
-• Blue Sushi (Indica)
-• Gorilla Glue (Indica)
-• Sky Walker (Sativa)
+🕐 Open: 10:00 – 21:00
+❌ Closed: Tuesdays
 
-🍰 Edibles:
-• Magic Cake — 250฿ (100% vegan chocolate cake with extract)
+🍕 See our full menu:
+${SITE_URL}/en/menu
 
-🍕 FOOD (Ban Passarelli)
-Pizza from 150฿ · Pasta from 139฿ · Desserts from 30฿
-Full menu: ${SITE_URL}/en/menu
+💬 Need help or have questions?
+Just type in this chat and our team will assist you directly.
 
-📦 Shipping cost extra — just ask!
-⚕️ Cannabis requires a valid Thai medical license.
-📍 Chiang Mai · Open daily except Wednesday
-
-———
-To order, send us:
-1. What you want & how much
-2. Your name
-3. Delivery address (or "pickup")
-
-Then type "pay" to get the QR code! 🙏`;
+📍 Mae On District, Chiang Mai 🙏`;
 
 export async function POST(request: NextRequest) {
   const rawBody = await request.text();

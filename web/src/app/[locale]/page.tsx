@@ -145,9 +145,9 @@ function HomeContent() {
                 {t("locationTitle")}
               </h2>
               <p className="text-charcoal-light mb-6 leading-relaxed">
-                Come visit our terrace restaurant surrounded by nature. Enjoy
-                authentic Italian food, fresh coffee, and the warmth of our
-                family.
+                Come visit our terrace restaurant in Mae On, Chiang Mai —
+                surrounded by nature. Enjoy authentic Italian food, fresh
+                coffee, and the warmth of our family.
               </p>
               <Link
                 href="/contact"

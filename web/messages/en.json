@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Ban Passarelli — Italian-Thai Family Restaurant & Treecoma Cannabis",
-    "description": "Authentic artisan pizza, homemade Italian food, and premium organic cannabis in Thailand. A family story of love, food, and nature."
+    "title": "Ban Passarelli — Italian Restaurant in Mae On, Chiang Mai | Treecoma Cannabis",
+    "description": "Authentic Italian restaurant in Mae On District, Chiang Mai. Handmade pizza, fresh pasta & homemade desserts. Licensed cannabis dispensary by Treecoma. Open daily 10:00–21:00, closed Tuesdays."
   },
   "nav": {
     "home": "Home",
@@ -14,8 +14,8 @@
     "admin": "Admin"
   },
   "home": {
-    "heroTitle": "Where Italy Meets Thailand",
-    "heroSubtitle": "Artisan pizza, homemade pasta, and premium organic cannabis — made with love by our family.",
+    "heroTitle": "Authentic Italian Restaurant in Chiang Mai",
+    "heroSubtitle": "Handmade pizza, fresh pasta, and homemade desserts — made with love by our Italian-Thai family in Mae On.",
     "heroCta": "See Our Menu",
     "storyTitle": "Our Family Story",
     "storyText": "Born from an Italian-Thai love story, Ban Passarelli brings authentic Italian flavors to the heart of Thailand. Every pizza is hand-stretched, every sauce is homemade, and every plant is grown with care.",
@@ -37,7 +37,7 @@
   "contact": {
     "title": "Visit Us",
     "hoursTitle": "Opening Hours",
-    "hours": "Wednesday – Monday, 11:00 – 22:00",
+    "hours": "Monday, Wednesday – Sunday, 10:00 – 21:00",
     "closed": "Closed on Tuesdays",
     "addressTitle": "Address",
     "directionsBtn": "Get Directions",
@@ -77,7 +77,24 @@
     "phoneLabel": "Phone (optional)",
     "messageLabel": "What are you interested in?",
     "submitBtn": "Send Inquiry",
-    "successMsg": "Thank you! We'll be in touch soon."
+    "successMsg": "Thank you! We'll be in touch soon.",
+    "complianceTitle": "Licensed Cultivation & Quality Standards",
+    "complianceIntro": "Treecoma (Tree Coma Co., Ltd.) operates under official licensing by the Thai Ministry of Public Health. Our facility in Mae On District, Chiang Mai, is fully compliant with Thailand's medical cannabis regulations.",
+    "licenseLabel": "License No.",
+    "licenseNumber": "CM-1-725/2567",
+    "licenseAuthority": "Issued by the Chiang Mai Provincial Public Health Office, under authority of the Ministry of Public Health",
+    "licenseValidity": "Valid through December 2026",
+    "licenseLaw": "Issued under the Protection and Promotion of Traditional Thai Medicine Wisdom Act B.E. 2542",
+    "environmentTitle": "Controlled Environment Cultivation",
+    "environmentText": "We use Athena Ag nutrient systems in a controlled indoor and greenhouse environment. Every stage of growth — from seedling to harvest — follows strict protocols to ensure purity, consistency, and safety. No harmful pesticides or chemical additives are used at any stage of production.",
+    "qualityTitle": "Quality Standards",
+    "qualityItem1": "Controlled environment for consistent quality",
+    "qualityItem2": "Professional nutrient management (Athena Ag)",
+    "qualityItem3": "No harmful pesticides or chemical additives",
+    "qualityItem4": "Strict production protocols from seed to harvest",
+    "qualityItem5": "Compliant with Thai medical cannabis regulations",
+    "frameworkTitle": "Thai Medical Cannabis Framework",
+    "frameworkText": "Cannabis cultivation and sale in Thailand is regulated by the Ministry of Public Health under the Protection and Promotion of Traditional Thai Medicine Wisdom Act. All operators must hold valid licenses and comply with national regulations regarding production, quality control, and distribution to authorized persons."
   },
   "cart": {
     "title": "Your Cart",

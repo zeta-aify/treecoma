@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Ban Passarelli — Ristorante Italiano-Thai & Treecoma Cannabis",
-    "description": "Pizza artigianale, cucina italiana fatta in casa e cannabis biologica premium in Thailandia. Una storia di famiglia, amore, cibo e natura."
+    "title": "Ban Passarelli — Ristorante Italiano a Mae On, Chiang Mai | Treecoma Cannabis",
+    "description": "Ristorante italiano autentico nel distretto di Mae On, Chiang Mai. Pizza artigianale, pasta fresca e dolci fatti in casa. Dispensario cannabis con licenza Treecoma. Aperto tutti i giorni 10:00–21:00, chiuso il martedì."
   },
   "nav": {
     "home": "Home",
@@ -14,8 +14,8 @@
     "admin": "Admin"
   },
   "home": {
-    "heroTitle": "Dove l'Italia Incontra la Thailandia",
-    "heroSubtitle": "Pizza artigianale, pasta fatta in casa e cannabis biologica premium — fatta con amore dalla nostra famiglia.",
+    "heroTitle": "Ristorante Italiano Autentico a Chiang Mai",
+    "heroSubtitle": "Pizza artigianale, pasta fresca e dolci fatti in casa — con amore dalla nostra famiglia italo-thailandese a Mae On.",
     "heroCta": "Vedi il Nostro Menu",
     "storyTitle": "La Nostra Storia",
     "storyText": "Nata da una storia d'amore italo-thailandese, Ban Passarelli porta i sapori autentici italiani nel cuore della Thailandia. Ogni pizza è stesa a mano, ogni salsa è fatta in casa e ogni pianta è coltivata con cura.",
@@ -37,7 +37,7 @@
   "contact": {
     "title": "Vieni a Trovarci",
     "hoursTitle": "Orari di Apertura",
-    "hours": "Mercoledì – Lunedì, 11:00 – 22:00",
+    "hours": "Lunedì, Mercoledì – Domenica, 10:00 – 21:00",
     "closed": "Chiuso il Martedì",
     "addressTitle": "Indirizzo",
     "directionsBtn": "Indicazioni Stradali",
@@ -77,7 +77,24 @@
     "phoneLabel": "Telefono (facoltativo)",
     "messageLabel": "A cosa sei interessato?",
     "submitBtn": "Invia Richiesta",
-    "successMsg": "Grazie! Ti contatteremo presto."
+    "successMsg": "Grazie! Ti contatteremo presto.",
+    "complianceTitle": "Coltivazione Autorizzata & Standard di Qualità",
+    "complianceIntro": "Treecoma (Tree Coma Co., Ltd.) opera sotto licenza ufficiale del Ministero della Sanità Pubblica tailandese. Il nostro stabilimento nel distretto di Mae On, Chiang Mai, è pienamente conforme alle normative tailandesi sulla cannabis medica.",
+    "licenseLabel": "Licenza N.",
+    "licenseNumber": "CM-1-725/2567",
+    "licenseAuthority": "Rilasciata dall'Ufficio Provinciale della Sanità Pubblica di Chiang Mai, per autorità del Ministero della Sanità Pubblica",
+    "licenseValidity": "Valida fino a dicembre 2026",
+    "licenseLaw": "Rilasciata ai sensi della Legge sulla Protezione e Promozione della Sapienza della Medicina Tradizionale Tailandese B.E. 2542",
+    "environmentTitle": "Coltivazione in Ambiente Controllato",
+    "environmentText": "Utilizziamo sistemi nutritivi Athena Ag in ambienti controllati indoor e in serra. Ogni fase della crescita — dalla piantina al raccolto — segue protocolli rigorosi per garantire purezza, consistenza e sicurezza. Nessun pesticida nocivo o additivo chimico viene utilizzato in nessuna fase della produzione.",
+    "qualityTitle": "Standard di Qualità",
+    "qualityItem1": "Ambiente controllato per una qualità costante",
+    "qualityItem2": "Gestione professionale dei nutrienti (Athena Ag)",
+    "qualityItem3": "Nessun pesticida nocivo o additivo chimico",
+    "qualityItem4": "Protocolli di produzione rigorosi dal seme al raccolto",
+    "qualityItem5": "Conforme alle normative tailandesi sulla cannabis medica",
+    "frameworkTitle": "Quadro Normativo Cannabis Medica in Thailandia",
+    "frameworkText": "La coltivazione e vendita di cannabis in Thailandia è regolata dal Ministero della Sanità Pubblica ai sensi della Legge sulla Protezione e Promozione della Sapienza della Medicina Tradizionale Tailandese. Tutti gli operatori devono possedere licenze valide e rispettare le normative nazionali in materia di produzione, controllo qualità e distribuzione a persone autorizzate."
   },
   "cart": {
     "title": "Il Tuo Carrello",
