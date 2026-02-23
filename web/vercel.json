@@ -3,6 +3,14 @@
     {
       "path": "/api/cron/order-reminders",
       "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/content-approval",
+      "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/cron/content-publish",
+      "schedule": "0 3,7,11 * * *"
     }
   ]
 }

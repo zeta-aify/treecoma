@@ -159,6 +159,7 @@
       "orders": "Orders",
       "products": "Products",
       "inquiries": "Inquiries",
+      "content": "Content",
       "logout": "Logout"
     },
     "orders": {
@@ -203,6 +204,34 @@
       "date": "Date",
       "markContacted": "Mark Contacted",
       "markClosed": "Close"
+    },
+    "content": {
+      "title": "Content",
+      "refresh": "Refresh",
+      "noPosts": "No content posts yet",
+      "viewEdit": "View",
+      "approve": "Approve",
+      "reject": "Reject",
+      "editPost": "Edit Post",
+      "backToList": "Back to Content",
+      "notFound": "Post not found",
+      "captionEn": "Caption (English)",
+      "captionTh": "Caption (Thai)",
+      "captionFinal": "Final Caption (for publishing)",
+      "captionFinalPlaceholder": "This caption will be published. Leave empty to use English.",
+      "uploadedBy": "Uploaded by",
+      "publishedAt": "Published",
+      "save": "Save",
+      "saving": "Saving...",
+      "moveToPending": "Back to Pending",
+      "statuses": {
+        "all": "All",
+        "draft": "Draft",
+        "pending_approval": "Pending",
+        "approved": "Approved",
+        "published": "Published",
+        "rejected": "Rejected"
+      }
     }
   },
   "social": {

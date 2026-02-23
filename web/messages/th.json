@@ -159,6 +159,7 @@
       "orders": "ออเดอร์",
       "products": "สินค้า",
       "inquiries": "การสอบถาม",
+      "content": "คอนเทนต์",
       "logout": "ออกจากระบบ"
     },
     "orders": {
@@ -203,6 +204,34 @@
       "date": "วันที่",
       "markContacted": "ติดต่อแล้ว",
       "markClosed": "ปิด"
+    },
+    "content": {
+      "title": "คอนเทนต์",
+      "refresh": "รีเฟรช",
+      "noPosts": "ยังไม่มีคอนเทนต์",
+      "viewEdit": "ดู",
+      "approve": "อนุมัติ",
+      "reject": "ปฏิเสธ",
+      "editPost": "แก้ไขโพสต์",
+      "backToList": "กลับไปคอนเทนต์",
+      "notFound": "ไม่พบโพสต์",
+      "captionEn": "แคปชัน (อังกฤษ)",
+      "captionTh": "แคปชัน (ไทย)",
+      "captionFinal": "แคปชันสุดท้าย (สำหรับเผยแพร่)",
+      "captionFinalPlaceholder": "แคปชันนี้จะถูกเผยแพร่ เว้นว่างไว้เพื่อใช้ภาษาอังกฤษ",
+      "uploadedBy": "อัปโหลดโดย",
+      "publishedAt": "เผยแพร่แล้ว",
+      "save": "บันทึก",
+      "saving": "กำลังบันทึก...",
+      "moveToPending": "กลับไปรอดำเนินการ",
+      "statuses": {
+        "all": "ทั้งหมด",
+        "draft": "ฉบับร่าง",
+        "pending_approval": "รอดำเนินการ",
+        "approved": "อนุมัติแล้ว",
+        "published": "เผยแพร่แล้ว",
+        "rejected": "ปฏิเสธ"
+      }
     }
   },
   "social": {

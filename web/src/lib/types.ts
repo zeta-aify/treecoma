@@ -102,6 +102,50 @@ export const FOOD_CATEGORIES: ProductCategory[] = [
   "coffee",
 ];
 
+// Content pipeline types
+export type ContentStatus =
+  | "draft"
+  | "pending_approval"
+  | "approved"
+  | "published"
+  | "rejected";
+
+export interface ContentUser {
+  id: string;
+  telegram_user_id: number;
+  name: string;
+  is_active: boolean;
+  created_at: string;
+}
+
+export interface ContentPost {
+  id: string;
+  user_id: string;
+  status: ContentStatus;
+  image_path: string;
+  image_url: string;
+  caption_en: string | null;
+  caption_th: string | null;
+  ai_image_description: string | null;
+  caption_final: string | null;
+  scheduled_at: string | null;
+  published_at: string | null;
+  instagram_post_id: string | null;
+  facebook_post_id: string | null;
+  approval_sent_at: string | null;
+  telegram_message_id: number | null;
+  created_at: string;
+  updated_at: string;
+  content_users?: ContentUser;
+}
+
+export const CONTENT_STATUS_FLOW: ContentStatus[] = [
+  "draft",
+  "pending_approval",
+  "approved",
+  "published",
+];
+
 export const CATEGORY_KEYS: Record<ProductCategory, string> = {
   starters: "starters",
   pasta: "pasta",

@@ -159,6 +159,7 @@
       "orders": "Ordini",
       "products": "Prodotti",
       "inquiries": "Richieste",
+      "content": "Contenuti",
       "logout": "Esci"
     },
     "orders": {
@@ -203,6 +204,34 @@
       "date": "Data",
       "markContacted": "Segna come Contattato",
       "markClosed": "Chiudi"
+    },
+    "content": {
+      "title": "Contenuti",
+      "refresh": "Aggiorna",
+      "noPosts": "Nessun contenuto ancora",
+      "viewEdit": "Vedi",
+      "approve": "Approva",
+      "reject": "Rifiuta",
+      "editPost": "Modifica Post",
+      "backToList": "Torna ai Contenuti",
+      "notFound": "Post non trovato",
+      "captionEn": "Didascalia (Inglese)",
+      "captionTh": "Didascalia (Thai)",
+      "captionFinal": "Didascalia Finale (per pubblicazione)",
+      "captionFinalPlaceholder": "Questa didascalia verrà pubblicata. Lascia vuoto per usare l'inglese.",
+      "uploadedBy": "Caricato da",
+      "publishedAt": "Pubblicato",
+      "save": "Salva",
+      "saving": "Salvataggio...",
+      "moveToPending": "Torna in Attesa",
+      "statuses": {
+        "all": "Tutti",
+        "draft": "Bozza",
+        "pending_approval": "In Attesa",
+        "approved": "Approvato",
+        "published": "Pubblicato",
+        "rejected": "Rifiutato"
+      }
     }
   },
   "social": {

@@ -56,6 +56,7 @@ function AdminShell({ children }: { children: React.ReactNode }) {
     { href: "/admin/orders", label: t("orders") },
     { href: "/admin/products", label: t("products") },
     { href: "/admin/inquiries", label: t("inquiries") },
+    { href: "/admin/content", label: t("content") },
   ];
 
   return (

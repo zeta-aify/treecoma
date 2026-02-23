@@ -84,6 +84,39 @@ CREATE TABLE order_items (
   created_at TIMESTAMPTZ DEFAULT now()
 );
 
+-- Content pipeline (social media automation)
+CREATE TYPE content_status AS ENUM (
+  'draft', 'pending_approval', 'approved', 'published', 'rejected'
+);
+
+CREATE TABLE content_users (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  telegram_user_id BIGINT NOT NULL UNIQUE,
+  name TEXT NOT NULL,
+  is_active BOOLEAN DEFAULT true,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE TABLE content_posts (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES content_users(id),
+  status content_status DEFAULT 'draft',
+  image_path TEXT NOT NULL,
+  image_url TEXT NOT NULL,
+  caption_en TEXT,
+  caption_th TEXT,
+  ai_image_description TEXT,
+  caption_final TEXT,
+  scheduled_at TIMESTAMPTZ,
+  published_at TIMESTAMPTZ,
+  instagram_post_id TEXT,
+  facebook_post_id TEXT,
+  approval_sent_at TIMESTAMPTZ,
+  telegram_message_id BIGINT,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+
 -- Indexes
 CREATE INDEX idx_products_category ON products(category);
 CREATE INDEX idx_products_available ON products(is_available);
@@ -91,12 +124,18 @@ CREATE INDEX idx_orders_status ON orders(status);
 CREATE INDEX idx_orders_created ON orders(created_at DESC);
 CREATE INDEX idx_cannabis_inquiries_status ON cannabis_inquiries(status);
 
+CREATE INDEX idx_content_posts_status ON content_posts(status);
+CREATE INDEX idx_content_posts_created ON content_posts(created_at DESC);
+
 -- Row Level Security
 ALTER TABLE products ENABLE ROW LEVEL SECURITY;
 ALTER TABLE cannabis_inquiries ENABLE ROW LEVEL SECURITY;
 ALTER TABLE customers ENABLE ROW LEVEL SECURITY;
 ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
 ALTER TABLE order_items ENABLE ROW LEVEL SECURITY;
+
+ALTER TABLE content_users ENABLE ROW LEVEL SECURITY;
+ALTER TABLE content_posts ENABLE ROW LEVEL SECURITY;
 
 -- Public read access for products
 CREATE POLICY "Products are viewable by everyone"
@@ -139,6 +178,23 @@ CREATE POLICY "Public can view orders"
 CREATE POLICY "Public can view order items"
   ON order_items FOR SELECT USING (true);
 
+CREATE POLICY "Admin full access on content_users"
+  ON content_users FOR ALL USING (auth.role() = 'authenticated');
+
+CREATE POLICY "Admin full access on content_posts"
+  ON content_posts FOR ALL USING (auth.role() = 'authenticated');
+
+-- Service role can manage content (for webhook/cron)
+CREATE POLICY "Service role manages content_users"
+  ON content_users FOR ALL USING (auth.role() = 'service_role');
+
+CREATE POLICY "Service role manages content_posts"
+  ON content_posts FOR ALL USING (auth.role() = 'service_role');
+
+-- Public can view published content posts
+CREATE POLICY "Public can view published content"
+  ON content_posts FOR SELECT USING (status = 'published');
+
 -- Updated at trigger
 CREATE OR REPLACE FUNCTION update_updated_at()
 RETURNS TRIGGER AS $$
@@ -154,4 +210,8 @@ CREATE TRIGGER update_products_updated_at
 
 CREATE TRIGGER update_orders_updated_at
   BEFORE UPDATE ON orders
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+
+CREATE TRIGGER update_content_posts_updated_at
+  BEFORE UPDATE ON content_posts
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
