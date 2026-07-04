@@ -163,3 +163,68 @@ INSERT INTO products (name_en, name_th, description_en, description_th, category
 ('Limoncello', 'ลิมอนเชลโล', NULL, NULL, 'liquori', 99, NULL, false, 2);
 
 COMMIT;
+
+-- ===== Task 6: photo assignments (paths served from web/public/menu/) =====
+-- Run as a separate statement batch AFTER the seed above has committed.
+-- Andreas: run this block in the Supabase SQL Editor once the seed is live.
+
+-- BAKERY
+UPDATE products SET image_url = '/menu/pagnotta-500g.webp' WHERE name_en = 'Pagnotta 500g' AND category = 'bakery';
+UPDATE products SET image_url = '/menu/baguette-200g.webp' WHERE name_en = 'Baguette 200g' AND category = 'bakery';
+UPDATE products SET image_url = '/menu/rosemary-focaccia.webp' WHERE name_en = 'Rosemary Focaccia' AND category = 'bakery';
+
+-- STARTERS
+UPDATE products SET image_url = '/menu/bruschetta-tomato.webp' WHERE name_en = 'Bruschetta Tomato' AND category = 'starters';
+UPDATE products SET image_url = '/menu/mozzarella-filled-potato-balls.webp' WHERE name_en = 'Mozzarella-Filled Potato Balls' AND category = 'starters';
+UPDATE products SET image_url = '/menu/bruschetta-olive-dry-tomato.webp' WHERE name_en = 'Bruschetta Olive & Dry Tomato' AND category = 'starters';
+UPDATE products SET image_url = '/menu/cold-cuts-cheese-platter.webp' WHERE name_en = 'Cold Cuts & Cheese Platter (2 Person)' AND category = 'starters';
+UPDATE products SET image_url = '/menu/caprese-starters.webp' WHERE name_en = 'Caprese' AND category = 'starters';
+UPDATE products SET image_url = '/menu/bruschetta-parma-ham.webp' WHERE name_en = 'Bruschetta Parma Ham' AND category = 'starters';
+
+-- PASTA
+UPDATE products SET image_url = '/menu/penne-arrabbiata.webp' WHERE name_en = 'Penne Arrabbiata' AND category = 'pasta';
+UPDATE products SET image_url = '/menu/penne-amatriciana.webp' WHERE name_en = 'Penne Amatriciana' AND category = 'pasta';
+UPDATE products SET image_url = '/menu/pasta-pesto.webp' WHERE name_en = 'Pasta Pesto' AND category = 'pasta';
+UPDATE products SET image_url = '/menu/pasta-clams.webp' WHERE name_en = 'Pasta Clams' AND category = 'pasta';
+UPDATE products SET image_url = '/menu/spaghetti-carbonara.webp' WHERE name_en = 'Spaghetti Carbonara' AND category = 'pasta';
+UPDATE products SET image_url = '/menu/pasta-bolognese.webp' WHERE name_en = 'Pasta Bolognese' AND category = 'pasta';
+UPDATE products SET image_url = '/menu/tagliatelle-sea-food.webp' WHERE name_en = 'Tagliatelle Sea Food' AND category = 'pasta';
+
+-- FRESH_PASTA
+UPDATE products SET image_url = '/menu/tagliatelle.webp' WHERE name_en = 'Tagliatelle' AND category = 'fresh_pasta';
+UPDATE products SET image_url = '/menu/tortelli-spinach-ricotta.webp' WHERE name_en = 'Tortelli Spinach-Ricotta' AND category = 'fresh_pasta';
+UPDATE products SET image_url = '/menu/cannelloni-spinach-ricotta.webp' WHERE name_en = 'Cannelloni Spinach-Ricotta' AND category = 'fresh_pasta';
+UPDATE products SET image_url = '/menu/lasagna.webp' WHERE name_en = 'Lasagna' AND category = 'fresh_pasta';
+
+-- MAIN
+UPDATE products SET image_url = '/menu/cotoletta-milanese.webp' WHERE name_en = 'Cotoletta Milanese' AND category = 'main';
+UPDATE products SET image_url = '/menu/meatballs-in-tomato-sauce.webp' WHERE name_en = 'Meatballs in Tomato Sauce' AND category = 'main';
+UPDATE products SET image_url = '/menu/italian-sausage.webp' WHERE name_en = 'Italian Sausage' AND category = 'main';
+UPDATE products SET image_url = '/menu/beef-tagliata.webp' WHERE name_en = 'Beef Tagliata' AND category = 'main';
+UPDATE products SET image_url = '/menu/saute-sea-food.webp' WHERE name_en = 'Sauté Sea Food' AND category = 'main';
+
+-- SALADS
+UPDATE products SET image_url = '/menu/beetroot-salad.webp' WHERE name_en = 'Beetroot Salad' AND category = 'salads';
+UPDATE products SET image_url = '/menu/italian-salad.webp' WHERE name_en = 'Italian Salad' AND category = 'salads';
+UPDATE products SET image_url = '/menu/parma-ham-melon.webp' WHERE name_en = 'Parma Ham & Melon' AND category = 'salads';
+
+-- CLASSIC_PIZZA
+UPDATE products SET image_url = '/menu/bugs-bunny.webp' WHERE name_en = 'Bugs Bunny' AND category = 'classic_pizza';
+UPDATE products SET image_url = '/menu/siciliana.webp' WHERE name_en = 'Siciliana' AND category = 'classic_pizza';
+
+-- SPECIAL_PIZZA
+UPDATE products SET image_url = '/menu/avocado-pizza.webp' WHERE name_en = 'Avocado' AND category = 'special_pizza';
+UPDATE products SET image_url = '/menu/carbonara-pizza.webp' WHERE name_en = 'Carbonara' AND category = 'special_pizza';
+UPDATE products SET image_url = '/menu/speciale.webp' WHERE name_en = 'Speciale' AND category = 'special_pizza';
+UPDATE products SET image_url = '/menu/marlon-brando.webp' WHERE name_en = 'Marlon Brando' AND category = 'special_pizza';
+UPDATE products SET image_url = '/menu/reggiana.webp' WHERE name_en = 'Reggiana' AND category = 'special_pizza';
+
+-- DESSERT
+UPDATE products SET image_url = '/menu/fruit-salad.webp' WHERE name_en = 'Fruit Salad' AND category = 'dessert';
+UPDATE products SET image_url = '/menu/tiramisu.webp' WHERE name_en = 'Tiramisù' AND category = 'dessert';
+
+-- BEERS
+UPDATE products SET image_url = '/menu/chang-62cl.webp' WHERE name_en = 'Chang 62cl' AND category = 'beers';
+
+-- COFFEE
+UPDATE products SET image_url = '/menu/espresso.webp' WHERE name_en = 'Espresso' AND category = 'coffee';
