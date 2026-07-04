@@ -70,7 +70,11 @@
       "liquori": "Liquori"
     },
     "downloadPdf": "Download full menu (PDF)",
-    "bakeryNote": "Freshly baked daily (subject to availability) · Frozen available · Pre-order fresh bread & focaccia for your chosen date"
+    "bakeryNote": "Freshly baked daily (subject to availability) · Frozen available · Pre-order fresh bread & focaccia for your chosen date",
+    "seasonal": "Seasonal",
+    "notes": {
+      "pasta": "Choose your pasta — spaghetti · fusilli · penne"
+    }
   },
   "cannabis": {
     "title": "Treecoma Cannabis",

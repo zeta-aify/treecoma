@@ -19,6 +19,8 @@
   /* Fonts */
   --font-heading: "Playfair Display", serif;
   --font-body: "Inter", "Noto Sans Thai", sans-serif;
+  --font-script: var(--font-kaushan), "Brush Script MT", cursive;
+  --font-condensed: var(--font-oswald), "Noto Sans Thai", sans-serif;
 }
 
 body {
@@ -27,6 +29,8 @@ body {
   font-family: var(--font-body);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
 }

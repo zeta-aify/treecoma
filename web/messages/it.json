@@ -70,7 +70,11 @@
       "liquori": "Liquori"
     },
     "downloadPdf": "Scarica il menù completo (PDF)",
-    "bakeryNote": "Sfornato fresco ogni giorno (secondo disponibilità) · Disponibile surgelato · Prenota pane e focaccia freschi per la data che preferisci"
+    "bakeryNote": "Sfornato fresco ogni giorno (secondo disponibilità) · Disponibile surgelato · Prenota pane e focaccia freschi per la data che preferisci",
+    "seasonal": "Di stagione",
+    "notes": {
+      "pasta": "Scegli la tua pasta — spaghetti · fusilli · penne"
+    }
   },
   "cannabis": {
     "title": "Treecoma Cannabis",

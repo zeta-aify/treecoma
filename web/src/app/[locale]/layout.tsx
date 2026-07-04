@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Noto_Sans_Thai } from "next/font/google";
+import {
+  Playfair_Display,
+  Inter,
+  Noto_Sans_Thai,
+  Kaushan_Script,
+  Oswald,
+} from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -25,6 +31,22 @@ const inter = Inter({
 const notoSansThai = Noto_Sans_Thai({
   variable: "--font-noto-thai",
   subsets: ["thai"],
+  display: "swap",
+});
+
+// Menu display faces, chosen to echo the printed Ban Passarelli menu:
+// a brush script for section titles, a condensed grotesque for names & prices.
+const kaushan = Kaushan_Script({
+  variable: "--font-kaushan",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -205,7 +227,7 @@ export default async function LocaleLayout({
         <LocalBusinessJsonLd />
       </head>
       <body
-        className={`${playfair.variable} ${inter.variable} ${notoSansThai.variable} antialiased`}
+        className={`${playfair.variable} ${inter.variable} ${notoSansThai.variable} ${kaushan.variable} ${oswald.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           <Header />

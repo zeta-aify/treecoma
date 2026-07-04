@@ -10,6 +10,8 @@ export default function MenuItemCard({ product }: { product: Product }) {
   const t = useTranslations("menu");
   const addItem = useCartStore((s) => s.addItem);
   const name = locale === "th" ? product.name_th : product.name_en;
+  const altName = locale === "th" ? product.name_en : product.name_th;
+  const desc = locale === "th" ? product.description_th : product.description_en;
 
   function handleAdd(variant?: string, price?: number) {
     addItem({
@@ -22,51 +24,62 @@ export default function MenuItemCard({ product }: { product: Product }) {
   }
 
   return (
-    <div className="flex items-center justify-between gap-4 py-3 border-b border-cream-dark last:border-0">
+    <div className="flex items-start gap-4 py-4 border-b border-dashed border-charcoal/20 last:border-0">
       {product.image_url && (
         <Image
           src={product.image_url}
           alt={name}
-          width={56}
-          height={56}
-          className="w-14 h-14 rounded-lg object-cover shrink-0"
+          width={76}
+          height={76}
+          className="w-16 h-16 sm:w-[76px] sm:h-[76px] rounded-lg object-cover shrink-0 shadow-sm ring-1 ring-black/5"
         />
       )}
+
       <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2">
-          <h3 className="font-medium text-charcoal truncate">{name}</h3>
+        <div className="flex items-baseline gap-2 flex-wrap">
+          <h3 className="font-condensed uppercase tracking-wide text-lg leading-tight font-semibold text-charcoal">
+            {name}
+          </h3>
           {product.is_seasonal && (
-            <span className="text-xs bg-gold/20 text-gold-dark px-2 py-0.5 rounded-full shrink-0">
-              Seasonal
+            <span className="font-condensed text-[10px] uppercase tracking-wider bg-gold/20 text-gold-dark px-2 py-0.5 rounded-full">
+              {t("seasonal")}
             </span>
           )}
         </div>
-        {product.description_en && (
-          <p className="text-xs text-charcoal-light mt-0.5">
-            {locale === "th" ? product.description_th : product.description_en}
+
+        {/* the other language's name, quiet, echoing the PDF's bilingual lines */}
+        <p className="text-xs text-charcoal-light/70 leading-snug">{altName}</p>
+
+        {desc && (
+          <p className="text-sm text-charcoal-light mt-1 max-w-[52ch] leading-snug">
+            {desc}
           </p>
         )}
+
         {product.price_variant && (
-          <div className="flex flex-wrap gap-1 mt-1">
+          <div className="flex flex-wrap gap-1.5 mt-2">
             {Object.entries(product.price_variant).map(([variant, price]) => (
               <button
                 key={variant}
                 onClick={() => handleAdd(variant, price as number)}
-                className="text-xs bg-cream-dark hover:bg-terracotta/10 text-charcoal-light px-2 py-0.5 rounded-full transition-colors"
+                className="font-condensed text-xs uppercase tracking-wide bg-cream-dark hover:bg-terracotta/15 text-charcoal-light px-2.5 py-1 rounded-full transition-colors"
               >
-                +{variant} {price as number}฿
+                + {variant.replace(/_/g, " ")} {price as number}฿
               </button>
             ))}
           </div>
         )}
       </div>
-      <div className="flex items-center gap-3 shrink-0">
-        <span className="font-semibold text-forest">{product.price}฿</span>
+
+      <div className="text-right shrink-0 pt-0.5">
+        <div className="font-condensed font-bold text-xl text-charcoal tabular-nums leading-none">
+          {product.price}฿
+        </div>
         <button
           onClick={() => handleAdd()}
-          className="bg-forest hover:bg-forest-light text-white text-sm px-3 py-1.5 rounded-full transition-colors"
+          className="mt-2 font-condensed uppercase tracking-wide text-[11px] font-semibold text-cream bg-forest hover:bg-forest-dark px-3.5 py-1.5 rounded-full transition-colors shadow-sm"
         >
-          {t("addToCart")}
+          + {t("addToCart")}
         </button>
       </div>
     </div>
