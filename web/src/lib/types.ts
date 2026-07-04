@@ -1,7 +1,10 @@
 export type ProductCategory =
+  | "bakery"
   | "starters"
   | "pasta"
+  | "fresh_pasta"
   | "main"
+  | "salads"
   | "sides"
   | "classic_pizza"
   | "special_pizza"
@@ -12,6 +15,7 @@ export type ProductCategory =
   | "drinks"
   | "beers"
   | "coffee"
+  | "liquori"
   | "cannabis";
 
 export interface Product {
@@ -87,19 +91,22 @@ export interface OrderItem {
 
 // Category groupings for display
 export const FOOD_CATEGORIES: ProductCategory[] = [
+  "bakery",
   "starters",
   "pasta",
+  "fresh_pasta",
   "main",
+  "salads",
   "sides",
   "classic_pizza",
   "special_pizza",
-  "premium_pizza",
   "calzoni",
   "panini",
   "dessert",
   "drinks",
   "beers",
   "coffee",
+  "liquori",
 ];
 
 // Content pipeline types
@@ -147,9 +154,12 @@ export const CONTENT_STATUS_FLOW: ContentStatus[] = [
 ];
 
 export const CATEGORY_KEYS: Record<ProductCategory, string> = {
+  bakery: "bakery",
   starters: "starters",
   pasta: "pasta",
+  fresh_pasta: "freshPasta",
   main: "main",
+  salads: "salads",
   sides: "sides",
   classic_pizza: "classicPizza",
   special_pizza: "specialPizza",
@@ -160,5 +170,6 @@ export const CATEGORY_KEYS: Record<ProductCategory, string> = {
   drinks: "drinks",
   beers: "beers",
   coffee: "coffee",
+  liquori: "liquori",
   cannabis: "cannabis",
 };
