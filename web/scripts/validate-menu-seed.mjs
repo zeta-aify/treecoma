@@ -17,20 +17,19 @@ const EXPECTED = {
   dessert: 6, drinks: 8, beers: 4, coffee: 6, liquori: 2,
 };
 
-// Match INSERT ... VALUES rows and count by the category literal in each row.
-const rows = sql.match(/\('(?:[^']|'')*'.*?\)/gs) || [];
+// Match `, '<category>', <price>` pairs directly across the whole SQL, without
+// trying to reconstruct row boundaries (which is fragile if names/descriptions
+// contain parentheses).
+const CATS = "bakery|starters|pasta|fresh_pasta|main|salads|sides|classic_pizza|special_pizza|premium_pizza|calzoni|panini|dessert|drinks|beers|coffee|liquori";
+const re = new RegExp(`,\\s*'(${CATS})'\\s*,\\s*(\\d+)`, "g");
 const counts = {};
 let priceErrors = [];
-for (const row of rows) {
-  const cat = (row.match(/'(bakery|starters|pasta|fresh_pasta|main|salads|sides|classic_pizza|special_pizza|premium_pizza|calzoni|panini|dessert|drinks|beers|coffee|liquori)'/) || [])[1];
-  if (!cat) continue;
+let m;
+while ((m = re.exec(sql)) !== null) {
+  const cat = m[1];
+  const price = Number(m[2]);
   counts[cat] = (counts[cat] || 0) + 1;
-  // price is the integer right after the category literal
-  const m = row.match(new RegExp(`'${cat}',\\s*(\\d+)`));
-  if (m) {
-    const price = Number(m[1]);
-    if (price < 20 || price > 500) priceErrors.push(`${cat}: suspicious price ${price}`);
-  }
+  if (price < 20 || price > 500) priceErrors.push(`${cat}: suspicious price ${price}`);
 }
 
 let ok = true;

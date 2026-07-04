@@ -35,7 +35,7 @@ INSERT INTO products (name_en, name_th, description_en, description_th, category
 ('Mozzarella-Filled Potato Balls', 'มอสซาเรลล่า โปเตโต้ บอล', 'Potato, mozzarella', 'มันฝรังกับมอซซาเรลล่า', 'starters', 99, NULL, false, 4),
 ('Bruschetta Parma Ham', 'บรุสเกตต้า แฮมพาร์มา', 'Parma ham, Parmesan cheese, balsamic glaze', 'แฮมพาร์มา, พาร์เมซานชีส, บัลซามิก', 'starters', 120, NULL, false, 5),
 ('Caprese', 'คาปรีเซ่', 'Fresh mozzarella, tomato, evo oil', 'มอซซาเรลล่าสด มะเขือเทศ นํามันมะกอกบริสุทธิ', 'starters', 150, NULL, false, 6),
-('Cold Cuts & Cheese Platter - 2 Person', 'แผ่นเนื้อเย็นและชีส สำหรับ 2 ท่าน', 'Parma ham, Salami, Mortadella Bologna, Speck, Blue cheese, Parmesan cheese, scamorza', 'แฮมพาร์มา, ซาลามี่, มอร์ทาเดลล่า โบโลญญ่า, สเปค, บลูชีส, พาร์เมซานชีส, ชีสรมควัน', 'starters', 339, NULL, false, 7);
+('Cold Cuts & Cheese Platter (2 Person)', 'แผ่นเนื้อเย็นและชีส (สำหรับ 2 ท่าน)', 'Parma ham, Salami, Mortadella Bologna, Speck, Blue cheese, Parmesan cheese, scamorza', 'แฮมพาร์มา, ซาลามี่, มอร์ทาเดลล่า โบโลญญ่า, สเปค, บลูชีส, พาร์เมซานชีส, ชีสรมควัน', 'starters', 339, NULL, false, 7);
 
 -- PASTA ("choose your pasta": spaghetti / fusilli / penne)
 INSERT INTO products (name_en, name_th, description_en, description_th, category, price, price_variant, is_seasonal, sort_order) VALUES
@@ -58,8 +58,8 @@ INSERT INTO products (name_en, name_th, description_en, description_th, category
 -- MAIN (Sauté Sea Food placed here per plan note, not in SIDES)
 INSERT INTO products (name_en, name_th, description_en, description_th, category, price, price_variant, is_seasonal, sort_order) VALUES
 ('Cotoletta Milanese', 'คอทโทเลตต้า', '100% chicken breast, crispy breading made with flour, breadcrumbs, and egg', 'อกไก่ 100% ชุบแป้ง ไข่ และเกล็ดขนมปัง ทอดกรอบ', 'main', 220, NULL, false, 1),
-('Meatballs in Tomato Sauce', 'มีทบอลในซอสมะเขือเทศ', 'Beef, fresh pork belly, parsley, garlic, egg, breadcrumbs, in homemade tomato sauce, served with homemade toasted bread, 5 pcs', 'เนื้อวัว เนื้อหมูสามชั้นสด พาสลีย์ กระเทียม ไข่ เกล็ดขนมปัง ในซอสมะเขือเทศโฮมเมด เสิร์ฟพร้อมขนมปังโฮมเมด', 'main', 230, NULL, false, 2),
-('Italian Sausage', 'ไส้กรอกอิตาเลียน', 'Artisanal 100% pork, shoulder and fresh belly, garlic, black pepper, salt, sweet paprika, a touch of dry wine, 2 pcs', 'เนื้อหมู 100% เนื้อส่วนหัวไหล่และสามชั้น กระเทียม พริกไทยดำ เกลือ ปาปริกาหวาน ไวน์ขาว', 'main', 230, NULL, false, 3),
+('Meatballs in Tomato Sauce', 'มีทบอลในซอสมะเขือเทศ', 'Beef, fresh pork belly, parsley, garlic, egg, breadcrumbs, in homemade tomato sauce, served with homemade toasted bread (5 pcs)', 'เนื้อวัว เนื้อหมูสามชั้นสด พาสลีย์ กระเทียม ไข่ เกล็ดขนมปัง ในซอสมะเขือเทศโฮมเมด เสิร์ฟพร้อมขนมปังโฮมเมด', 'main', 230, NULL, false, 2),
+('Italian Sausage', 'ไส้กรอกอิตาเลียน', 'Artisanal 100% pork (shoulder and fresh belly), garlic, black pepper, salt, sweet paprika, a touch of dry wine (2 pcs)', 'เนื้อหมู 100% เนื้อส่วนหัวไหล่และสามชั้น กระเทียม พริกไทยดำ เกลือ ปาปริกาหวาน ไวน์ขาว', 'main', 230, NULL, false, 3),
 ('Beef Tagliata', 'บีฟ ทาเลียต้า', 'Tenderloin 250-270g, served with salad, parmesan cheese and balsamic vinegar', 'เนื้อวัว สันใน 250g. เสิร์ฟพร้อมพาร์เมซานชีสสไลซ์ และบัลซามิก', 'main', 419, NULL, false, 4),
 ('Sauté Sea Food', 'ผัดซีฟู้ด', 'River prawn, king prawn, mussel, clams, squid, garlic, parsley, white wine, tomato sauce, served with homemade toasted bread', 'กุ้งแม่น้ำ กุ้งกุลาดำ หอยแมลงภู่ หอยตลับ ปลาหมึก หอยลาย กระเทียม และไวน์ขาว เสิร์ฟพร้อมขนมปังโฮมเมดปิ้ง', 'main', 339, NULL, false, 5);
 
@@ -92,7 +92,7 @@ INSERT INTO products (name_en, name_th, description_en, description_th, category
 
 -- SPECIAL_PIZZA (no premium_pizza in the new menu; those items fold into special_pizza)
 INSERT INTO products (name_en, name_th, description_en, description_th, category, price, price_variant, is_seasonal, sort_order) VALUES
-('Avocado', 'อโวคาโด', 'Mozzarella with avocado on top and dry tomato, available only when in season', 'มอซซาเรลล่า ด้านบนด้วยอโวคาโด มีเฉพาะช่วงที่มีผลผลิต มะเขือเทศตากแห้ง', 'special_pizza', 240, NULL, true, 1),
+('Avocado', 'อโวคาโด', 'Mozzarella with avocado on top and dry tomato (available only when in season)', 'มอซซาเรลล่า ด้านบนด้วยอโวคาโด (มีเฉพาะช่วงที่มีผลผลิต) มะเขือเทศตากแห้ง', 'special_pizza', 240, NULL, true, 1),
 ('Patbon', 'พัดบอน', 'Tomato, mozzarella, ham, baked potatoes', 'มะเขือเทศ มอซซาเรลล่า แฮม มันฝรั่งอบ', 'special_pizza', 240, NULL, false, 2),
 ('Hawaiian', 'ฮาวายเอี้ยน', 'Tomato, mozzarella, pineapple, ham', 'มะเขือเทศ มอซซาเรลล่า สับปะรด และแฮม', 'special_pizza', 240, NULL, false, 3),
 ('Carbonara', 'คาร์โบนาร่า', 'Tomato, mozzarella, pancetta, Parmesan cheese, egg, pepper', 'มะเขือเทศ มอซซาเรลล่า เบคอน พาร์เมซานชีส ไข่ และพริกไทย', 'special_pizza', 260, NULL, false, 4),
