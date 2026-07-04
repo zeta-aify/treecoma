@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { getMenuProducts } from "@/lib/menu";
 import { FOOD_CATEGORIES, CATEGORY_KEYS } from "@/lib/types";
@@ -6,6 +7,13 @@ import MenuItemCard from "@/components/MenuItemCard";
 
 // ISR: cache the page, re-fetch products at most every 5 minutes.
 export const revalidate = 300;
+
+const HERO_CATEGORIES = new Set<ProductCategory>([
+  "starters",
+  "pasta",
+  "classic_pizza",
+  "special_pizza",
+]);
 
 export default async function MenuPage({
   params,
@@ -59,6 +67,17 @@ export default async function MenuPage({
             if (!items?.length) return null;
             return (
               <section key={cat} id={cat} className="scroll-mt-20">
+                {HERO_CATEGORIES.has(cat) && (
+                  <div className="relative w-full h-40 sm:h-52 rounded-xl overflow-hidden mb-4">
+                    <Image
+                      src={`/menu/hero-${cat}.webp`}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 768px"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
                 <h2 className="font-heading text-2xl text-forest mb-4 pb-2 border-b-2 border-terracotta/30">
                   {t(`categories.${CATEGORY_KEYS[cat]}`)}
                 </h2>

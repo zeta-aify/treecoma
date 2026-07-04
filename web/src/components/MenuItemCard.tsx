@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import type { Product } from "@/lib/types";
 import { useCartStore } from "@/stores/cart";
@@ -22,6 +23,15 @@ export default function MenuItemCard({ product }: { product: Product }) {
 
   return (
     <div className="flex items-center justify-between gap-4 py-3 border-b border-cream-dark last:border-0">
+      {product.image_url && (
+        <Image
+          src={product.image_url}
+          alt={name}
+          width={56}
+          height={56}
+          className="w-14 h-14 rounded-lg object-cover shrink-0"
+        />
+      )}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
           <h3 className="font-medium text-charcoal truncate">{name}</h3>
