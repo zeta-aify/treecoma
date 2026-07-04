@@ -51,9 +51,12 @@
     "subtitle": "Authentic Italian food, made fresh daily",
     "addToCart": "Add to Cart",
     "categories": {
+      "bakery": "Artisan Bakery",
       "starters": "Starters",
       "pasta": "Pasta",
+      "freshPasta": "Fresh Homemade Pasta",
       "main": "Main Dishes",
+      "salads": "Refreshing & Light",
       "sides": "Side Dishes",
       "classicPizza": "Classic Pizza",
       "specialPizza": "Special Pizza",
@@ -63,8 +66,11 @@
       "dessert": "Dessert",
       "drinks": "Drinks",
       "beers": "Beers",
-      "coffee": "Coffee"
-    }
+      "coffee": "Coffee",
+      "liquori": "Liquori"
+    },
+    "downloadPdf": "Download full menu (PDF)",
+    "bakeryNote": "Freshly baked daily (subject to availability) · Frozen available · Pre-order fresh bread & focaccia for your chosen date"
   },
   "cannabis": {
     "title": "Treecoma Cannabis",

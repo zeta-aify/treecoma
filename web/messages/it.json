@@ -51,9 +51,12 @@
     "subtitle": "Cucina italiana autentica, preparata fresca ogni giorno",
     "addToCart": "Aggiungi",
     "categories": {
+      "bakery": "Panetteria Artigianale",
       "starters": "Antipasti",
       "pasta": "Pasta",
+      "freshPasta": "Pasta Fresca",
       "main": "Secondi Piatti",
+      "salads": "Piatti Freschi & Leggeri",
       "sides": "Contorni",
       "classicPizza": "Pizza Classica",
       "specialPizza": "Pizza Speciale",
@@ -63,8 +66,11 @@
       "dessert": "Dolci",
       "drinks": "Bevande",
       "beers": "Birre",
-      "coffee": "Caffè"
-    }
+      "coffee": "Caffè",
+      "liquori": "Liquori"
+    },
+    "downloadPdf": "Scarica il menù completo (PDF)",
+    "bakeryNote": "Sfornato fresco ogni giorno (secondo disponibilità) · Disponibile surgelato · Prenota pane e focaccia freschi per la data che preferisci"
   },
   "cannabis": {
     "title": "Treecoma Cannabis",
