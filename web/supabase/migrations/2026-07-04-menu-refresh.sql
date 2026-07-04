@@ -7,6 +7,19 @@ ALTER TYPE product_category ADD VALUE IF NOT EXISTS 'fresh_pasta';
 ALTER TYPE product_category ADD VALUE IF NOT EXISTS 'salads';
 ALTER TYPE product_category ADD VALUE IF NOT EXISTS 'liquori';
 
+-- Make product references survive menu re-seeds. order_items snapshots
+-- name/price, so product_id can be nulled rather than blocking deletes.
+-- Andreas: run this block together with (or right after) the ALTER TYPE
+-- statements above, and before the seed transaction below.
+ALTER TABLE order_items ALTER COLUMN product_id DROP NOT NULL;
+ALTER TABLE order_items DROP CONSTRAINT IF EXISTS order_items_product_id_fkey;
+ALTER TABLE order_items ADD CONSTRAINT order_items_product_id_fkey
+  FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE SET NULL;
+
+ALTER TABLE cannabis_inquiries DROP CONSTRAINT IF EXISTS cannabis_inquiries_product_id_fkey;
+ALTER TABLE cannabis_inquiries ADD CONSTRAINT cannabis_inquiries_product_id_fkey
+  FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE SET NULL;
+
 -- (seed section added in Task 3, run as a SEPARATE statement batch after the
 --  ALTER TYPE statements above have committed)
 

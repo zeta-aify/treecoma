@@ -43,7 +43,7 @@ CREATE TABLE cannabis_inquiries (
   email TEXT NOT NULL,
   phone TEXT,
   message TEXT,
-  product_id UUID REFERENCES products(id),
+  product_id UUID REFERENCES products(id) ON DELETE SET NULL,
   status TEXT DEFAULT 'new' CHECK (status IN ('new', 'contacted', 'closed')),
   created_at TIMESTAMPTZ DEFAULT now()
 );
@@ -76,7 +76,7 @@ CREATE TABLE orders (
 CREATE TABLE order_items (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   order_id UUID REFERENCES orders(id) ON DELETE CASCADE NOT NULL,
-  product_id UUID REFERENCES products(id) NOT NULL,
+  product_id UUID REFERENCES products(id) ON DELETE SET NULL,
   name_snapshot TEXT NOT NULL, -- frozen product name at time of order
   price INTEGER NOT NULL,
   quantity INTEGER NOT NULL DEFAULT 1,
