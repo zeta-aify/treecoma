@@ -71,8 +71,8 @@ function HomeContent() {
             <div className="rounded-2xl overflow-hidden bg-cream shadow-md">
               <div className="relative h-56">
                 <Image
-                  src="/images/menu/menu-pizza-classic.jpg"
-                  alt="Classic Pizza"
+                  src="/menu/hero-classic_pizza.webp"
+                  alt="Artisan pizza"
                   fill
                   className="object-cover"
                 />
@@ -90,8 +90,8 @@ function HomeContent() {
             <div className="rounded-2xl overflow-hidden bg-cream shadow-md">
               <div className="relative h-56">
                 <Image
-                  src="/images/menu/menu-pasta.jpg"
-                  alt="Homemade Pasta"
+                  src="/menu/hero-pasta.webp"
+                  alt="Homemade pasta"
                   fill
                   className="object-cover"
                 />
@@ -109,8 +109,8 @@ function HomeContent() {
             <div className="rounded-2xl overflow-hidden bg-cream shadow-md">
               <div className="relative h-56">
                 <Image
-                  src="/images/restaurant/coffee-dessert-cannabis.jpg"
-                  alt="Coffee & Dessert"
+                  src="/menu/tiramisu.webp"
+                  alt="Coffee & dessert"
                   fill
                   className="object-cover"
                 />
