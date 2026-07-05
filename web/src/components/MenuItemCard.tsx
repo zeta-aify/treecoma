@@ -5,6 +5,17 @@ import { useLocale, useTranslations } from "next-intl";
 import type { Product } from "@/lib/types";
 import { useCartStore } from "@/stores/cart";
 
+// Preferred display order for the "choose your pasta" shape options.
+const SHAPE_ORDER = ["spaghetti", "fusilli", "penne"];
+
+function sortVariants(pv: Record<string, number>): [string, number][] {
+  const rank = (k: string) => {
+    const i = SHAPE_ORDER.indexOf(k);
+    return i === -1 ? 99 : i;
+  };
+  return Object.entries(pv).sort((a, b) => rank(a[0]) - rank(b[0]));
+}
+
 export default function MenuItemCard({ product }: { product: Product }) {
   const locale = useLocale();
   const t = useTranslations("menu");
@@ -58,15 +69,19 @@ export default function MenuItemCard({ product }: { product: Product }) {
 
         {product.price_variant && (
           <div className="flex flex-wrap gap-1.5 mt-2">
-            {Object.entries(product.price_variant).map(([variant, price]) => (
-              <button
-                key={variant}
-                onClick={() => handleAdd(variant, price as number)}
-                className="font-condensed text-xs uppercase tracking-wide bg-cream-dark hover:bg-terracotta/15 text-charcoal-light px-2.5 py-1 rounded-full transition-colors"
-              >
-                + {variant.replace(/_/g, " ")} {price as number}฿
-              </button>
-            ))}
+            {sortVariants(product.price_variant).map(([variant, price]) => {
+              const samePrice = price === product.price;
+              return (
+                <button
+                  key={variant}
+                  onClick={() => handleAdd(variant, price)}
+                  className="font-condensed text-xs uppercase tracking-wide bg-cream-dark hover:bg-terracotta/15 text-charcoal-light px-2.5 py-1 rounded-full transition-colors"
+                >
+                  + {variant.replace(/_/g, " ")}
+                  {samePrice ? "" : ` ${price}฿`}
+                </button>
+              );
+            })}
           </div>
         )}
       </div>

@@ -241,3 +241,19 @@ UPDATE products SET image_url = '/menu/chang-62cl.webp' WHERE name_en = 'Chang 6
 
 -- COFFEE
 UPDATE products SET image_url = '/menu/espresso.webp' WHERE name_en = 'Espresso' AND category = 'coffee';
+
+-- ============================================================================
+-- 2026-07-05 Menu tweaks (Angela + Andreas)
+-- ============================================================================
+-- Dried pasta: customer chooses the shape (spaghetti / fusilli / penne), same price.
+UPDATE products SET price_variant = '{"spaghetti":159,"fusilli":159,"penne":159}' WHERE name_en = 'Penne Arrabbiata'  AND category = 'pasta';
+UPDATE products SET price_variant = '{"spaghetti":189,"fusilli":189,"penne":189}' WHERE name_en = 'Penne Amatriciana' AND category = 'pasta';
+UPDATE products SET price_variant = '{"spaghetti":189,"fusilli":189,"penne":189}' WHERE name_en = 'Pasta Pesto'       AND category = 'pasta';
+UPDATE products SET price_variant = '{"spaghetti":199,"fusilli":199,"penne":199}' WHERE name_en = 'Pasta Clams'       AND category = 'pasta';
+UPDATE products SET price_variant = '{"spaghetti":199,"fusilli":199,"penne":199}' WHERE name_en = 'Spaghetti Carbonara' AND category = 'pasta';
+UPDATE products SET price_variant = '{"spaghetti":199,"fusilli":199,"penne":199}' WHERE name_en = 'Pasta Bolognese'   AND category = 'pasta';
+
+-- Vegan option (+20฿) on selected dishes.
+UPDATE products SET price_variant = '{"vegan":259}' WHERE name_en = 'Cannelloni Spinach-Ricotta' AND category = 'fresh_pasta';
+UPDATE products SET price_variant = '{"vegan":279}' WHERE name_en = 'Lasagna'                     AND category = 'fresh_pasta';
+UPDATE products SET price_variant = '{"vegan":250}' WHERE name_en = 'Meatballs in Tomato Sauce'   AND category = 'main';
